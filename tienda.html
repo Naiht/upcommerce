@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylestienda.css">
     <script src="js/funcion.js"></script>
-    <title>Document</title>
+    <title>Tienda</title>
 </head>
 <body>
+    <iframe class="ifNav" src="nav_bar.html" frameborder="0"></iframe>
     <div class="encabezado">
         <div class="imagen">
             <img class="imgtienda" src="img/encabezado/2.png" >
@@ -18,49 +19,14 @@
         </div>
     </div>
     <div class="grid-layout">
-        <div class="producto" onclick="detalle();">
+        <div class="producto" onclick="detalle();"><!--cardview del los productos-->
             <img class="imgproducto" src="img/productos/mouse.png">
             <div class="div_nombre">
                 <p class="nombre">MSI ds100</p>
             </div>
             <p class="precio">20.00$</p>
         </div>
-        <div class="producto" onclick="detalle();">
-            <img class="imgproducto" src="img/productos/mouse.png">
-            <div class="div_nombre">
-                <p class="nombre">MSI ds100</p>
-            </div>
-            <p class="precio">20.00$</p>
-        </div>
-        <div class="producto" onclick="detalle();">
-            <img class="imgproducto" src="img/productos/mouse.png">
-            <div class="div_nombre">
-                <p class="nombre">MSI ds100</p>
-            </div>
-            <p class="precio">20.00$</p>
-        </div>
-        <div class="producto" onclick="detalle();">
-            <img class="imgproducto" src="img/productos/mouse.png">
-            <div class="div_nombre">
-                <p class="nombre">MSI ds100</p>
-            </div>
-            <p class="precio">20.00$</p>
-        </div>
-        <div class="producto" onclick="detalle();">
-            <img class="imgproducto" src="img/productos/mouse.png">
-            <div class="div_nombre">
-                <p class="nombre">MSI ds100</p>
-            </div>
-            <p class="precio">20.00$</p>
-        </div>
-        <div class="producto" onclick="detalle();">
-            <img class="imgproducto" src="img/productos/mouse.png">
-            <div class="div_nombre">
-                <p class="nombre">MSI ds100</p>
-            </div>
-            <p class="precio">20.00$</p>
-        </div>
-        <div class="center">
+        <div class="center"><!--div de los detalles del producto -->
             <input type="checkbox" id="detalle">
             <div class="fondoneg container_producto"></div>
             <div class="container_producto">
@@ -70,8 +36,10 @@
                         <img class="img_prod" src="img/productos/mouse.png">
                     </div>
                     <div class="detalles_producto">
-                        <p class="nom_producto">Mouse MSI ds100</p>
-                        <p class="detalles_prod">El Interceptor DS100 viene con un software exclusivo de MSI, el cual ofrece control total sobre el mouse. Que contiene manual y una guía de instalación.En la solapa principal (Sensitivity) podemos personalizar los perfiles y los modos, configurando los 7 botones a nuestro antojo y podemos ajustar la resolución DPI por separado para cada perfil, o bien usar el botón de ajuste de DPI.</p>
+                        <p class="nom_prod">Mouse MSI ds100</p>
+                        <div class="divdetalle">
+                            <p class="detalles_prod">El Interceptor DS100 viene con un software exclusivo de MSI, el cual ofrece control total sobre el mouse. Que contiene manual y una guía de instalación.En la solapa principal (Sensitivity) podemos personalizar los perfiles y los modos, configurando los 7 botones a nuestro antojo y podemos ajustar la resolución DPI por separado para cada perfil, o bien usar el botón de ajuste de DPI.</p>
+                        </div>
                         <p class="precio_prod">20.00$</p>
                         <div class="botones">
                             <button class="negociar">Negociar</button>

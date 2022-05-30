@@ -1,12 +1,25 @@
 body{
     background: #eceaea;
 }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.ifNav{
+    padding: 0;
+    margin: 0;
+    margin-bottom: -5.5rem;
+    width: 100% !important;
+}
+
 /*encabezado de la tienda*/
 .encabezado{
     background-color: #9230de;
     border-radius: 2rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-top: 1rem;
     display: flex;
     height: 280px;
 }
@@ -24,7 +37,7 @@ body{
     border-radius: 100%;
 }
 .texto_encabezado{
-    margin-top: 5rem;
+    margin-top: 7rem;
     margin-left: 2rem;
     font-size: 40px;
     font-weight: 600;
@@ -119,7 +132,7 @@ input[type="checkbox"]{
     color: #3498db;
 }
 .dos{
-    display: flex; 
+    display: flex;
 } 
 .img_prod{
     border-radius: 1rem;
@@ -132,6 +145,10 @@ input[type="checkbox"]{
     margin: 1.5rem;
     font-size:30px;
     font-weight: 600;
+}
+.divdetalle{
+    height: 350px;
+    overflow: auto;
 }
 .detalles_prod{
     text-align: justify;
@@ -148,6 +165,7 @@ input[type="checkbox"]{
    position: relative;
    
 }
+
 /*boton negociar*/
 .negociar {
     padding: 15px 25px;
@@ -165,9 +183,8 @@ input[type="checkbox"]{
     overflow: hidden;
     margin: 0.5rem;
     cursor: pointer;
-   }
-   
-   .negociar::before {
+}   
+.negociar::before {
     content: "";
     position: absolute;
     top: 0;
@@ -180,18 +197,16 @@ input[type="checkbox"]{
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     transition: all 250ms
-   }
-   
-   .negociar:hover {
+} 
+.negociar:hover {
     color: #e8e8e8;
-   }
-   
-   .negociar:hover::before {
+}  
+.negociar:hover::before {
     width: 100%;
-   }
+}
    
-   /*boton agregar*/
-   .agregar {
+/*boton agregar*/
+.agregar {
     padding: 15px 25px;
     border: unset;
     border-radius: 15px;
@@ -207,9 +222,8 @@ input[type="checkbox"]{
     overflow: hidden;
     margin: 0.5rem;
     cursor: pointer;
-   }
-   
-   .agregar::before {
+}  
+.agregar::before {
     content: "";
     position: absolute;
     top: 0;
@@ -222,21 +236,18 @@ input[type="checkbox"]{
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     transition: all 250ms
-   }
-   
-   .agregar:hover {
+}   
+.agregar:hover {
     color: #e8e8e8;
-   }
-   
-   .agregar:hover::before {
+}   
+.agregar:hover::before {
     width: 100%;
-   }
-   .otros{
-     display: flex;
-     font-size: 15px;
-     font-weight: 600;
-   }
-   .inventario{
-     margin-right: 15.5rem;
-   }
-   
+}
+.otros{
+    display: flex;
+    font-size: 15px;
+    font-weight: 600;
+}
+.inventario{
+    margin-right: 18rem;
+}
