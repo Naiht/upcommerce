@@ -30,9 +30,11 @@ header {
 .nav_form #nav_busq{
     width: 25rem;
     height: 2.2rem;
+    padding: 15px;
     border: none;
     border-radius: 0.4rem 0rem 0rem 0.4rem;
 }
+
 
 .nav_form #nav_btnbusq{
     height: 2.2rem;
@@ -44,6 +46,13 @@ header {
 }
 
 .nav_opciones li {
+    cursor: pointer;
+    padding: 0px 20px;
+}
+
+.nav_opciones li:hover {
+    color: rgb(183, 180, 180);
+    cursor: pointer;
     padding: 0px 20px;
 }
 
