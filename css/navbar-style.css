@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2%;
+    background-color: #9230DE;
+    color: white;
+  }
+
+.nav_opciones{
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+.nav_form{
+    padding: 0;
+    margin: 0%;
+    display: flex;
+    
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.20);
+}
+
+.nav_form #nav_busq{
+    width: 25rem;
+    height: 2.2rem;
+    border: none;
+    border-radius: 0.4rem 0rem 0rem 0.4rem;
+}
+
+.nav_form #nav_btnbusq{
+    height: 2.2rem;
+    width: 3rem;
+    border: none;
+    color: white;
+    background-color: #ED24FE;
+    border-radius: 0rem 0.4rem 0.4rem 0rem;
+}
+
+.nav_opciones li {
+    padding: 0px 20px;
+}
+
+  

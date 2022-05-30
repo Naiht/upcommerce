@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.ifNav{
+    padding: 0;
+    margin: 0;
+    margin-bottom: -5.5rem;
+    width: 100% !important;
+}
+
+
+.banner{
+    background-color: #E9E8E8;
+    width: 100%;
+    display: inline-flex;
+  }
+  
+  .bannertexto{
+    margin-top: 8rem;
+    margin-left: 2rem;
+    margin-right: 11rem;
+  }
+  
+  #txtbanner{
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  #imgbanner{
+    width: 350px;
+    height: 350px;
+  }
+    
+  #registrateban{ 
+    border: 0;
+    background-color: #9230DE;
+    color: white;
+    width: 12rem;
+    height: 2.5rem;
+    margin-top: 1.5rem;
+    margin-left: 44rem;
+    box-shadow: -1px 7px 5px 0px rgba(0,0,0,0.22)
+  }
+  
+  #registrateban:hover{ 
+    border: 0;
+    cursor:pointer;
+  }
+  
+  #registrateban:active{
+    background-color: #6a21a2;
+  }
