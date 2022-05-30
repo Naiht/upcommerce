@@ -1,5 +1,8 @@
-body{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+body, input{
     background: #eceaea;
+    font-family: "Poppins", sans-serif;
 }
 *{
     box-sizing: border-box;
@@ -249,5 +252,5 @@ input[type="checkbox"]{
     font-weight: 600;
 }
 .inventario{
-    margin-right: 18rem;
+    margin-right: 14rem;
 }
