@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-body, input{
-    background: #eceaea;
-    font-family: "Poppins", sans-serif;
-}
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+}
+
+body, input{
+    font-family: "Poppins", sans-serif;
+}
   
 header {
     display: flex;
@@ -62,7 +62,7 @@ header {
     padding: 0px 20px;
 }
 
-/*carrito*/
+*carrito*/
 .detalle-btn{
     background: #fff;
     padding: 10px 20px;
@@ -137,7 +137,7 @@ input[type="checkbox"]{
     height: 115px;
 }
 .item-content{
-    
+
     width: 150px;
     margin: auto;
     text-align: center;
@@ -193,4 +193,4 @@ input[type="checkbox"]{
 }   
 .pagar:hover::before {
     width: 100%;
-}
+} 
