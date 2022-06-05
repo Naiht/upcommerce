@@ -70,7 +70,7 @@
               Registrate
             </button>
           </div>
-          <img src="img/log.svg" class="image" alt="" />
+          <img src="img/M2.png" class="image" alt="" />
         </div>
         <div class="panel right-panel">
           <div class="content">
@@ -82,7 +82,7 @@
               Iniciar sesion
             </button>
           </div>
-          <img src="img/register.svg" class="image" alt="" />
+          <img src="img/M3.png" class="image" alt="" />
         </div>
       </div>
     </div>

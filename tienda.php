@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="grid-layout">
-        <script src="js/tienda-fnc.js"></script><!-- CardView--> -->
+        <script src="js/tienda-fnc.js"></script><!-- CardView-->
         <div class="center"><!--div de los detalles del producto -->
             <input type="checkbox" id="detalle">
             <div class="fondoneg container_producto"></div>

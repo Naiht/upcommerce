@@ -1,3 +1,3 @@
 function btnIniciarSesion(){
-    window.open("login/login.html","_top");
+    window.open("login/login.php");
 }

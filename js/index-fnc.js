@@ -1,4 +1,3 @@
 function btnRegistrar(){
-    location.href = "/login/login.html";
-    btnReg();
+    window.open("login/login.html","_top");
 }
