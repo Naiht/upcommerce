@@ -11,7 +11,7 @@
 <body>
     <?php include './nav_bar.php' ?>    
     <div class="encabezado">
-        <div class="imagen">
+        <div class="imagentienda">
             <img class="imgtienda" src="img/encabezado/2.png" >
         </div>
         <div class="texto_encabezado">
