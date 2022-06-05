@@ -9,7 +9,7 @@
     <title>Tienda</title>
 </head>
 <body>
-    <iframe class="ifNav" src="nav_bar.html" frameborder="0"></iframe>
+    <?php include './nav_bar.php' ?>    
     <div class="encabezado">
         <div class="imagen">
             <img class="imgtienda" src="img/encabezado/2.png" >
