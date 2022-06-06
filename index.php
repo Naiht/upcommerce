@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/index-style.css">
     <script src="js/nav_bar.js"></script>
 
-    <title>Document</title>
+    <title>UpCommerce</title>
 </head>
 <body>
     <?php include './nav_bar.php' ?>    
