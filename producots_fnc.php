@@ -6,10 +6,15 @@
             $idt = $_POST['idt'];
             $precio = $_POST['precio'];
             $cantidad = $_POST['cantidad'];
+            $fechaActual = date('Y-m-d');
     
-            $foto = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+
+
+        
+            $foto = addslashes(file_get_contents($_FILES['img']['tmp_name']));
     
-            $query = "insert into productos (nombrep,descripcion,id_tienda,precio,cantidad,estado_venta,foto) values('$nombre','$desc',$idt,$precio,$cantidad,1,'$foto')";
+
+            $query = "insert into productos (nombrep,descripcion,id_tienda,precio,fecha_publi,cantidad,estado_venta,foto) values('$nombre','$desc',$idt,$precio,'$fechaActual',$cantidad,1,'$foto')";
     
             $resul = $conexion->query($query);
     
@@ -18,5 +23,5 @@
                echo '<script> alert("Agregado"); </script>'; 
             }else{
                 echo "no"; 
-            }   
+            } 
 ?>  

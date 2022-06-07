@@ -10,27 +10,57 @@
 </head>
 <body>
     <?php include './nav_bar.php' ?>    
+
     <div class="encabezado">
-        <div class="imagentienda">
-            <img class="imgtienda" src="img/encabezado/2.png" >
+        <?php 
+            include("conexion.php");
+
+            $query = "SELECT * FROM tiendas";
+            $resultado = $conexion->query($query); 
+            $nombre = $resultado ->fetch_assoc();
+        ?>
+
+    <div class="imagentienda">
+            <img class="imgtienda" src="data:image/jpg;base64, <?php echo base64_encode($nombre['foto']); ?>">
         </div>
+
         <div class="texto_encabezado">
-            <p class="nombretienda">Nombre de la Tienda</p>
+            <p class="nombretienda"><?php echo $nombre['nombre_t'] ?></p>
         </div>
     </div>
+
     <div class="grid-layout">
-        <script src="js/tienda-fnc.js"></script><!-- CardView-->
+        <?php
+            include("conexion.php");
+
+            $query = "SELECT * FROM productos";
+            $resultado = $conexion->query($query);
+            $cont = [];
+            while($row = $resultado ->fetch_assoc()){
+            ?>
+                <div class="producto" onclick="detalle();">
+                <img class="imgproducto" src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>">
+                <div class="div_nombre">
+                        <p class="nombre"><?php echo $row['nombrep']; ?></p>
+                </div>
+                <p class="precio"><?php echo $row['precio']; ?> C$</p>
+                </div>`
+        <?php
+            }
+        ?> 
+
         <div class="center"><!--div de los detalles del producto -->
             <input type="checkbox" id="detalle">
             <div class="fondoneg container_producto"></div>
             <div class="container_producto">
                 <label for="detalle" class="close-btn fas fa-time" title="close">X</label>
                 <div class="dos">
+                    <?php ?>
                     <div class="imagen_producto">
                         <img class="img_prod" src="img/productos/mouse2.png">
                     </div>
                     <div class="detalles_producto">
-                        <p class="nom_prod">Mouse MSI ds100</p>
+                        <p class="nom_prod">Mouse MSI 5</p>
                         <div class="divdetalle">
                             <p class="detalles_prod">El Interceptor DS100 viene con un software exclusivo de MSI, el cual ofrece control total sobre el mouse. Que contiene manual y una guía de instalación.En la solapa principal (Sensitivity) podemos personalizar los perfiles y los modos, configurando los 7 botones a nuestro antojo y podemos ajustar la resolución DPI por separado para cada perfil, o bien usar el botón de ajuste de DPI.</p>
                         </div>
