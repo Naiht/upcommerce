@@ -10,7 +10,17 @@
     <title>UpCommerce</title>
 </head>
 <body>
-    <?php include './nav_bar.php' ?>    
+    <!--
+        
+    -->
+    <?php 
+        include './nav_bar.php';
+        session_start();
+        $user=$_SESSION['email'];
+        echo "<h1> hola $user</h1>";
+        echo "<a href='login/salir.php'> salir </a>";
+        
+    ?>    
     <div class="banner">
         <div class="bannertexto">
            <p id="txtbanner">UpCommerce es una plataforma donde podes craear tu propia tienda <br> en poco tiempo para expandir tu negocio.</p>

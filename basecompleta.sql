@@ -25,7 +25,8 @@ id_tienda INT NOT NULL AUTO_INCREMENT primary key,
 id_usuario int,
 nombre_t nvarchar(50),
 color_ban nvarchar(50),
-creacion_fecha date
+creacion_fecha date,
+foto LONGBLOB 
 );
 
 
@@ -57,7 +58,8 @@ fecha_publi date,
 cantidad int,
 estado_venta boolean,
 id_cat_prod int,
-FOREIGN KEY (id_cat_prod) REFERENCES categ_prod(id_cat_prod)
+FOREIGN KEY (id_cat_prod) REFERENCES categ_prod(id_cat_prod),
+foto LONGBLOB 
 );
 
 
