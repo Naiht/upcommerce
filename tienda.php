@@ -9,7 +9,7 @@
     <title>Tienda</title>
 </head>
 <body>
-    <?php include './nav_bar.php' ?>    
+    <?php include './nav_bar.php'?>    
 
     <div class="encabezado">
         <?php 
