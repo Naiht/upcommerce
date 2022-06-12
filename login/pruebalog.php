@@ -19,10 +19,20 @@
 
               if($result->num_rows>0){
                 $row=mysqli_fetch_assoc($result);
+<<<<<<< HEAD
                 $_SESSION['email']=$row['email'];
                 header("Location: ../index.php");
               }else{
                 echo "<script>alert('La contraseña o el correo son incorrectos')</script>";
+=======
+                $_SESSION['id']=$row['id_usuario'];
+                $_SESSION['email']=$row['email'];
+                $_SESSION['nombre']=$row['nombres'];
+                header("Location: ../index.php");
+              }else{
+                echo "<script>alert('La contraseña o el correo son incorrectos')</script>";
+                header("Location: login.php");
+>>>>>>> 92a2a7c6a2adebb2efbcdf737c11f291b3ff7138
               }
             }
 ?>

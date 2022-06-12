@@ -11,54 +11,50 @@
     <title>Login</title>
   </head>
   <body>
+   
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-
-
-          <form action="#" class="sign-in-form">
+          
+          <!--login-->
+          <form action="pruebalog.php" method = "POST" class="sign-in-form">
             <h2 class="title">Iniciar sesion</h2>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="text" placeholder="Correo electronico" />
+              <input name="email" type="text" placeholder="Correo electronico" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" />
+              <input name="pass" type="password" placeholder="Contraseña" />
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+            <input name="log" type="submit" value="Login" class="btn solid" />
           </form>
-
-          <form action="#" class="sign-up-form">
+          
+          <!--registro-->
+          <form action="pruebaregistro.php" method = "POST" class="sign-up-form">
             <h2 class="title">Registrate</h2>
-
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre" />
+              <input name ="nombre" type="text" placeholder="Nombre" />
             </div>
-
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Correo electronico" />
+              <input name="correo" type="email" placeholder="Correo electronico" />
             </div>
-
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" />
+              <input name="password" type="password" placeholder="Contraseña" />
             </div>
-
-			<div class="input-field">
-				<i class="fas fa-lock"></i>
-				<input type="password" placeholder="Repetir contraseña" />
-			</div>
-
-            <input type="submit" class="btn" value="Sign up" />
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input name="cpassword" type="password" placeholder="Repetir contraseña" />
+            </div>
+            <input name="registro" type="submit" class="btn" value="Sign up" />
           </form>
-
-
         </div>
       </div>
 
+      <!--mesajes circulares-->
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
