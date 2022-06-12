@@ -1,0 +1,21 @@
+.imagen{
+    border-radius: 1rem;
+    width: 140px;
+    height: 140px;
+}
+
+.producto{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: beige;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.20);
+}
+
+.item-content{
+    /*background-color: #9230de;*/
+    width: 900px;
+    margin: auto;
+    text-align: center;
+}

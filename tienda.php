@@ -10,22 +10,23 @@
 </head>
 <body>
     <?php include './nav_bar.php' ?>    
-
-    <div class="encabezado">
-        <?php 
+    
+    <?php 
             include("conexion.php");
 
             $query = "SELECT * FROM tiendas";
             $resultado = $conexion->query($query); 
-            $nombre = $resultado ->fetch_assoc();
-        ?>
+            $tiendav = $resultado ->fetch_assoc();
+    ?>
+       
+    <div class="encabezado" style="background: <?php echo $tiendav['color_ban']; ?>">
 
     <div class="imagentienda">
-            <img class="imgtienda" src="data:image/jpg;base64, <?php echo base64_encode($nombre['foto']); ?>">
+            <img class="imgtienda" src="data:image/jpg;base64, <?php echo base64_encode($tiendav['foto']); ?>">
         </div>
 
         <div class="texto_encabezado">
-            <p class="nombretienda"><?php echo $nombre['nombre_t'] ?></p>
+            <p class="nombretienda"><?php echo $tiendav['nombre_t'] ?></p>
         </div>
     </div>
 
