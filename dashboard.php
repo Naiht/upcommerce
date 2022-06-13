@@ -96,9 +96,35 @@
 
             <button onclick="ingresoprod();">ingresar producto</button>
             <!--Ingresar un producto-->
+<<<<<<< HEAD
             <div class ="ingresarproducto" >
                 <p class = "ingp-titu">Ingresar producto</p>
                 <form action="" method="POST" enctype="multipart/form-data">
+=======
+            <div class="center">
+                <input type="checkbox" id="ingresar_producto">
+                <div class="fondo_negro container_ingresarproducto"></div>
+                <div class="container_ingresarproducto">
+                    <label for="ingresar_producto" class="close-btn fas fa-time" title="close">X</label>
+                    <div class="dos">
+                        <div class ="ingresarproducto" >
+                            <p class = "ingp-titu">Ingresar producto</p>
+                            <form id="formulario" action="" method="POST" enctype="multipart/form-data">
+
+                                <input type="file" name="img">
+                                    
+                                <p>Nombre del producto</p>
+                                <div class="input-field">
+                                    <i class="fas fa-store"></i>
+                                    <input type="text" name ="nombre" placeholder="Nombre producto">
+                                </div>
+                                    
+                                <p>Descripcion</p>
+                                <div class="input-field">
+                                    <i class="fas fa-store"></i>
+                                    <input type="text" name ="desc" placeholder="Descripcion">
+                                </div>
+>>>>>>> f93818193c39d9e8d4a57595cf7f4ea0fd8b277b
 
                                 <p>Precio</p>
                                 <div class="input-field">
@@ -117,10 +143,14 @@
                             </form>
                         </div>
                     </div>
+<<<<<<< HEAD
                 
 
                     <input name = "ingreprodb" class= "btn" type="submit" value="Aceptar">
                 </form>
+=======
+                </div>
+>>>>>>> f93818193c39d9e8d4a57595cf7f4ea0fd8b277b
             </div>
         </div>
 
@@ -153,7 +183,11 @@
             if(isset($_POST["ingreprodb"])){
                 $nombre = $_POST['nombre'];
                 $desc = $_POST['desc'];
+<<<<<<< HEAD
                 $idt = $inft['id_tienda'];
+=======
+                $idt = $inft['id_tienda'];;
+>>>>>>> f93818193c39d9e8d4a57595cf7f4ea0fd8b277b
                 $precio = $_POST['precio'];
                 $cantidad = $_POST['cantidad'];
                 $fechaActual = date('Y-m-d');
