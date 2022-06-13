@@ -1,4 +1,3 @@
-function test(){
-    var result = '<?php test(); ?>';
-    document.write(result);
+function pasardato(nombre){
+    alert(nombre);
 }

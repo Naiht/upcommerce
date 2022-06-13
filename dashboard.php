@@ -98,7 +98,7 @@
             <!--Ingresar un producto-->
             <div class ="ingresarproducto" >
                 <p class = "ingp-titu">Ingresar producto</p>
-                <form action="producots_fnc.php" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
 
                     <input type="file" name="img">
                     
@@ -127,7 +127,7 @@
                     </div>
                 
 
-                    <input class= "btn" type="submit" value="Aceptar">
+                    <input name = "ingreprodb" class= "btn" type="submit" value="Aceptar">
                 </form>
             </div>
 
@@ -159,10 +159,10 @@
             }
 
             //Ingresar un producto
-            if(isset($_POST["ingreprod"])){
+            if(isset($_POST["ingreprodb"])){
                 $nombre = $_POST['nombre'];
                 $desc = $_POST['desc'];
-                $idt = $_POST['idt'];
+                $idt = $inft['id_tienda'];
                 $precio = $_POST['precio'];
                 $cantidad = $_POST['cantidad'];
                 $fechaActual = date('Y-m-d');

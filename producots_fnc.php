@@ -8,9 +8,7 @@
             $cantidad = $_POST['cantidad'];
             $fechaActual = date('Y-m-d');
     
-
-
-        
+    
             $foto = addslashes(file_get_contents($_FILES['img']['tmp_name']));
     
 
