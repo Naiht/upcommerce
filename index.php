@@ -12,11 +12,8 @@
 <body>
     <?php 
         include './nav_bar.php';
-        session_start();
-        $id=$_SESSION['id'];
-        $correo=$_SESSION['email'];
-        $nom=$_SESSION['nombre'];
     ?>    
+    
     <div class="banner">
         <div class="bannertexto">
            <p id="txtbanner">UpCommerce es una plataforma donde podes craear tu propia tienda <br> en poco tiempo para expandir tu negocio.</p>

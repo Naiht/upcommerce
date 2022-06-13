@@ -11,6 +11,18 @@
     <script src="js/nav_bar.js"></script>
 </head>
 <body>
+    <?php
+        session_start();
+        if(isset($_SESSION["nombres"])){
+
+            $id=$_SESSION['id'];
+            $correo=$_SESSION['email'];
+            $nom=$_SESSION['nombre'];
+        }else{
+            
+        }
+    ?>    
+
     <header>
        <p>UpCommerce</p>
        
@@ -22,16 +34,28 @@
            <ul class="nav_opciones">
             <li id="nav_noti"><i class="fa fa-bell"></i></li>
             <li id="nav_carrito" onclick="btnCarrito()"><i class="fa fa-cart-shopping"></i></li>
-            <li id="nav_user" onclick="btnIniciarSesion()"><i class="fa fa-user"></i></li>
-                <div class="contopciones">
-                    <ul>
-                        <li><i class="fa fa-shop"></i> Mi tienda</li>
-                        <li><i class="fa fa-dashboard"></i>Panel de control</li>
-                        <li><i class="fa fa-close"></i>Cerrar sesion</li>
-                    </ul>
-                </div>
+
+            <?php 
+                if(isset($_SESSION["nombres"])){
+
+                    echo '<script>alert("si");</script>';
+                    echo '<li id="nav_user" onclick=""><i class="fa fa-user"></i></li>';
+                    echo '  <div class="contopciones">
+                                <ul>
+                                    <li><i class="fa fa-shop"></i> Mi tienda</li>
+                                    <li><i class="fa fa-dashboard"></i>Panel de control</li>
+                                    <li><i class="fa fa-close"></i>Cerrar sesion</li>
+                                </ul>
+                            </div>';
+                }else{
+
+                    echo '<li id="nav_user" onclick="btnIniciarSesion()"><i class="fa fa-user"></i></li>';
+                }
+            ?>    
            </ul>
        </nav>
     </header>
+
+    <a href="login/salir.php">salir</a>
 </body>
 </html>

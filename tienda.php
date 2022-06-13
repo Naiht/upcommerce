@@ -13,9 +13,6 @@
 <body>
     <?php include './nav_bar.php' ?>    
     
-
-
-
     <?php 
             include("conexion.php");
 
