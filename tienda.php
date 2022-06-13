@@ -48,11 +48,13 @@
                 <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto" onclick="detalle();" >
                 <img class="imgproducto" src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>">
                 <div class="div_nombre">
-                        <p class="nombre"><?php echo $row['nombrep']; ?></p>
+                    <p class="nombre"><?php echo $row['nombrep']; ?></p>
                 </div>
                 <p class="precio"><?php echo $row['precio']; ?> C$</p>
                 </div>
-  
+                <script>
+                    pasardato(<?php echo json_encode($row); ?>);
+                </script>
         <?php
             }
         ?> 
@@ -86,12 +88,6 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            pasardato(<?php echo json_encode($tiendav['nombre_t']); ?>);
-        </script>
-
-
     </div>
 </body>
 </html>

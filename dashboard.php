@@ -97,7 +97,6 @@
 
             <button onclick="ingresoprod();">ingresar producto</button>
             <!--Ingresar un producto-->
-<<<<<<< HEAD
             <div class="center">
                 <input type="checkbox" id="ingresar_producto">
                 <div class="fondo_negro container_ingresarproducto"></div>
@@ -121,11 +120,6 @@
                                     <i class="fas fa-store"></i>
                                     <input type="text" name ="desc" placeholder="Descripcion">
                                 </div>
-=======
-            <div class ="ingresarproducto" >
-                <p class = "ingp-titu">Ingresar producto</p>
-                <form action="" method="POST" enctype="multipart/form-data">
->>>>>>> 5bfa0e30a766c7e95cb810d0526748731a8e61f6
 
                                 <p>Precio</p>
                                 <div class="input-field">
@@ -144,14 +138,7 @@
                             </form>
                         </div>
                     </div>
-<<<<<<< HEAD
                 </div>
-=======
-                
-
-                    <input name = "ingreprodb" class= "btn" type="submit" value="Aceptar">
-                </form>
->>>>>>> 5bfa0e30a766c7e95cb810d0526748731a8e61f6
             </div>
         </div>
 
@@ -184,11 +171,7 @@
             if(isset($_POST["ingreprodb"])){
                 $nombre = $_POST['nombre'];
                 $desc = $_POST['desc'];
-<<<<<<< HEAD
                 $idt = $inft['id_tienda'];;
-=======
-                $idt = $inft['id_tienda'];
->>>>>>> 5bfa0e30a766c7e95cb810d0526748731a8e61f6
                 $precio = $_POST['precio'];
                 $cantidad = $_POST['cantidad'];
                 $fechaActual = date('Y-m-d');

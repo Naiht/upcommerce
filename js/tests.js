@@ -1,3 +1,3 @@
 function pasardato(nombre){
-    alert(nombre);
+    alert(nombre[1][1]);
 }
