@@ -93,6 +93,8 @@ html, body {
 /*Modificar tienda*/
 .modificartienda{
     margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding-left: 2.5rem;
     width: 500px;
     height: 300px;
@@ -320,4 +322,52 @@ margin-top: 1rem;
     width: 900px;
     margin: auto;
     text-align: center;
+}
+
+/*popup ingresar producto*/
+.ingresar_producto-btn{
+  background: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3498db;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.ingresar_producto-btn, .container_ingresarproducto{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}  
+input[type="checkbox"]{
+  display: none;
+} 
+.container_ingresarproducto{
+  display: none;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
+}
+.fondo_negro{
+  display: none;
+  background-color:rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100vh;
+}
+#ingresar_producto:checked ~ .container_ingresarproducto{
+  display: block;
+}
+#ingresar_producto:checked ~ .fondo_negro{
+  display: flex;
+}
+.container_ingresarproducto .close-btn{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.container_ingresarproducto .close-btn:hover{
+  color: #3498db;
 }

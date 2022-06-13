@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/dashboard.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="js/dashboard-fnc.js"></script>
+    <script src="js/popup_ingresar_producto.js"></script>
 </head>
 <body>
     <?php include './nav_bar.php' ?>    
@@ -94,43 +95,51 @@
                 ?> 
             </div>
 
-
+            <button onclick="ingresoprod();">ingresar producto</button>
             <!--Ingresar un producto-->
-            <div class ="ingresarproducto" >
-                <p class = "ingp-titu">Ingresar producto</p>
-                <form action="producots_fnc.php" method="POST" enctype="multipart/form-data">
+            <div class="center">
+                <input type="checkbox" id="ingresar_producto">
+                <div class="fondo_negro container_ingresarproducto"></div>
+                <div class="container_ingresarproducto">
+                    <label for="ingresar_producto" class="close-btn fas fa-time" title="close">X</label>
+                    <div class="dos">
+                        <div class ="ingresarproducto" >
+                            <p class = "ingp-titu">Ingresar producto</p>
+                            <form id="formulario" action="" method="POST" enctype="multipart/form-data">
 
-                    <input type="file" name="img">
-                    
-                    <p>Nombre del producto</p>
-                    <div class="input-field">
-                        <i class="fas fa-store"></i>
-                        <input type="text" name ="nombre" placeholder="Nombre producto">
-                    </div>
-                    
-                    <p>Descripcion</p>
-                    <div class="input-field">
-                        <i class="fas fa-store"></i>
-                        <input type="text" name ="desc" placeholder="Descripcion">
-                    </div>
+                                <input type="file" name="img">
+                                    
+                                <p>Nombre del producto</p>
+                                <div class="input-field">
+                                    <i class="fas fa-store"></i>
+                                    <input type="text" name ="nombre" placeholder="Nombre producto">
+                                </div>
+                                    
+                                <p>Descripcion</p>
+                                <div class="input-field">
+                                    <i class="fas fa-store"></i>
+                                    <input type="text" name ="desc" placeholder="Descripcion">
+                                </div>
 
-                    <p>Precio</p>
-                    <div class="input-field">
-                        <i class="fas fa-store"></i>
-                        <input type="text" name ="precio" placeholder="Precio">
-                    </div>
+                                <p>Precio</p>
+                                <div class="input-field">
+                                    <i class="fas fa-store"></i>
+                                    <input type="text" name ="precio" placeholder="Precio">
+                                </div>
 
-                    <p>Cantidad</p>
-                    <div class="input-field">
-                        <i class="fas fa-store"></i>
-                        <input type="number" name ="cantidad" placeholder="Cantidad">
-                    </div>
-                
+                                <p>Cantidad</p>
+                                <div class="input-field">
+                                    <i class="fas fa-store"></i>
+                                    <input type="number" name ="cantidad" placeholder="Cantidad">
+                                </div>
+                                
 
-                    <input class= "btn" type="submit" value="Aceptar">
-                </form>
+                                <input name="ingreprodb" class= "btn" type="submit" value="Aceptar">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
 
 
@@ -159,10 +168,10 @@
             }
 
             //Ingresar un producto
-            if(isset($_POST["ingreprod"])){
+            if(isset($_POST["ingreprodb"])){
                 $nombre = $_POST['nombre'];
                 $desc = $_POST['desc'];
-                $idt = $_POST['idt'];
+                $idt = $inft['id_tienda'];;
                 $precio = $_POST['precio'];
                 $cantidad = $_POST['cantidad'];
                 $fechaActual = date('Y-m-d');
@@ -175,14 +184,13 @@
         
                 if($resul){
                    echo "si"; 
-                   echo '<script> alert("Agregado"); </script>'; 
+                   echo '<script> alert("Agregado"); </script>';
+                   echo '<script> window.location.reload(); </script>';
                 }else{
                     echo "no"; 
                 } 
             }
     ?>  
-
-
 
 </body>
 </html>
