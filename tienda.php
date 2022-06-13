@@ -10,12 +10,15 @@
     <title>Tienda</title>
 </head>
 <body>
+<<<<<<< HEAD
     <?php
         session_start();
         $user=$_SESSION['nombre'];
         echo "<h1> $user </h1>";
         echo "<a href='login/salir.php'> logout </a>"
     ?>
+=======
+>>>>>>> 84dfb1b8c9a9f7aeec06fd072f96a5a97f3369d8
     <?php include './nav_bar.php' ?>    
     
     <?php 
