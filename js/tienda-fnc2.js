@@ -1,16 +1,12 @@
-cardViews();
+var nombre;
+var precio;
 
-
-function cardViews(){
-    console.log("hola");
-    let contenedor = document.querySelector('.grid-layout');
-    for(i =0 ; i < 4 ; i++){
-        contenedor.innerHTML += `<div class="producto" onclick="detalle();">
-        <img class="imgproducto" src="img/productos/mouse2.png">
-        <div class="div_nombre">
-                <p class="nombre"><?php echo $cont['nombrep']; ?></p>
-        </div>
-        <p class="precio">20.00$</p>
-        </div>`;
-    }
-}
+$(document).ready(function () {
+    $('.producto').on('click',function(e){
+        e.preventDefault();
+        nombre = $(this).attr('nombre');
+        precio = $(this).attr('precio');
+        alert(nombre);
+        alert(precio);
+    });
+});

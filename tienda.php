@@ -5,22 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylestienda.css">
-    <script src="js/funcion.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/funcion.js"></script>
+    <script src="js/tests.js"></script>
     <title>Tienda</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <?php
-        session_start();
-        $user=$_SESSION['nombre'];
-        echo "<h1> $user </h1>";
-        echo "<a href='login/salir.php'> logout </a>"
-    ?>
-=======
->>>>>>> 84dfb1b8c9a9f7aeec06fd072f96a5a97f3369d8
     <?php include './nav_bar.php' ?>    
     
+
+
+
     <?php 
             include("conexion.php");
 
@@ -28,6 +23,8 @@
             $resultado = $conexion->query($query); 
             $tiendav = $resultado ->fetch_assoc();
     ?>
+
+    
        
     <div class="encabezado" style="background: <?php echo $tiendav['color_ban']; ?>">
 
@@ -46,7 +43,6 @@
 
             $query = "SELECT * FROM productos";
             $resultado = $conexion->query($query);
-            $cont = [];
             while($row = $resultado ->fetch_assoc()){
             ?>
                 <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto" onclick="detalle();" >
@@ -55,11 +51,12 @@
                         <p class="nombre"><?php echo $row['nombrep']; ?></p>
                 </div>
                 <p class="precio"><?php echo $row['precio']; ?> C$</p>
-                </div>`
-                
+                </div>
+  
         <?php
             }
         ?> 
+
 
         <div class="center"><!--div de los detalles del producto -->
             <input type="checkbox" id="detalle">
@@ -89,6 +86,12 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            pasardato(<?php echo json_encode($tiendav['nombre_t']); ?>);
+        </script>
+
+
     </div>
 </body>
 </html>
