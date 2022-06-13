@@ -9,16 +9,9 @@
     <title>Tienda</title>
 </head>
 <body>
-<<<<<<< HEAD
     <?php include './nav_bar.php' ?>    
     
     <?php 
-=======
-    <?php include './nav_bar.php'?>    
-
-    <div class="encabezado">
-        <?php 
->>>>>>> 92a2a7c6a2adebb2efbcdf737c11f291b3ff7138
             include("conexion.php");
 
             $query = "SELECT * FROM tiendas";

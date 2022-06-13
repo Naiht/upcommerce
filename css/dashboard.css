@@ -1,3 +1,302 @@
+html, body {  
+  margin:0px;  
+  height:100%;  
+}  
+
+.contTotal{
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+
+/*Barra Lateral*/
+.sidebar-navigation {
+  display: inline-block;
+  height: 100%;
+  min-height: auto;
+  width: 80px;
+  background-color: #9230DE;
+  float: left;
+}
+.sidebar-navigation ul {
+  text-align: center;
+  color: white;
+}
+.sidebar-navigation ul li {
+  padding: 28px 0;
+  cursor: pointer;
+  transition: all ease-out 120ms;
+}
+.sidebar-navigation ul li i {
+  display: block;
+  font-size: 24px;
+  transition: all ease 450ms;
+}
+.sidebar-navigation ul li .tooltip {
+  display: inline-block;
+  position: absolute;
+  background-color: #9230DE;
+  padding: 8px 15px;
+  border-radius: 3px;
+  margin-top: -26px;
+  left: 90px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+.sidebar-navigation ul li .tooltip:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -4px;
+  top: 10px;
+  transform: rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: inherit;
+}
+.sidebar-navigation ul li:hover {
+  background-color: #ED24FE;
+}
+.sidebar-navigation ul li:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.sidebar-navigation ul li.active {
+  background-color: #ED24FE;
+}
+.sidebar-navigation ul li.active i {
+  color: #98d7ec;
+}
+
+
+/*------ ColorPicker 1 ------*/
+.colorp {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 400px;
+    height: 130px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+.colorp::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+  }
+.colorp::-moz-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+
+/*Modificar tienda*/
+.modificartienda{
+    margin: auto;
+    padding-left: 2.5rem;
+    width: 500px;
+    height: 300px;
+    background-color: #E9E8E8;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.20);
+}
+
+.cont-btnnombre{
+  display: grid;
+  grid-template-columns: 60% 30%;
+}
+
+.form-modtienda{
+  margin-top: 1rem;
+}
+
+.Header-txt{
+  padding-left: 1.2rem;
+  padding-top: 0.5rem;
+  font-weight: 600;
+  color: white;
+  height: 40px;
+  margin-left: -2.5rem;
+  border-radius: 1rem 1rem 0rem 0rem;
+  background-color: #9230DE;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+/*UploadImg**/
+.avatar-wrapper {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  margin-top: -7.3rem;
+  margin-left: 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 1px 1px 15px -5px black;
+  transition: all 0.3s ease;
+}
+.avatar-wrapper:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.avatar-wrapper:hover .profile-pic {
+  opacity: 0.5;
+}
+.avatar-wrapper .profile-pic {
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.avatar-wrapper .profile-pic:after {
+  font-family: FontAwesome;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 100px;
+  background: #ecf0f1;
+  color: #34495e;
+  text-align: center;
+}
+.avatar-wrapper .upload-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.avatar-wrapper .upload-button .fa-arrow-circle-up {
+  position: absolute;
+  font-size: 100px;
+  top: 0px;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #34495e;
+}
+.avatar-wrapper .upload-button:hover .fa-arrow-circle-up {
+  opacity: 0.9;
+}
+
+
+
+/*Ingresar producto*/
+.ingresarproducto{
+  margin: auto;
+  padding-top: 3rem;
+  padding-left: 2.5rem;
+  width: 500px;
+  height: 540px;
+  background-color: #E9E8E8;
+  border-radius: 1rem;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.20);
+}
+
+.cont-btnnombre{
+display: grid;
+grid-template-columns: 60% 30%;
+}
+
+.form-modtienda{
+margin-top: 1rem;
+}
+
+.ingresarproducto .input-field {
+  max-width: 380px;
+  width: 100%;
+  border-color: rgb(138, 136, 136);
+  border-width: 1px;
+  border-style: solid;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  margin-top: -1px;
+  height: 50px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  position: relative;
+}
+
+
+.ingp-titu{
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+
+
+/*Campos de textos*/
+.input-field {
+    max-width: 300px;
+    width: 100%;
+    border-color: rgb(138, 136, 136);
+    border-width: 1px;
+    border-style: solid;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 50px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+  
+  .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+}
+  
+  .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/*Botont*/
+.btn {
+    width: 120px;
+    background-color: #ED24FE;
+    border: none;
+    outline: none;
+    height: 40px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+.btn:hover {
+    background-color: #4d84e2;
+}
+
+
+/*Productos*/
+.productoslst{
+  margin-left: -1.9rem;
+  width: 85rem;
+  overflow: auto;
+  padding-left: 2.5rem;
+  max-height: 800px;
+  border-radius: 1.2rem;
+  background-color: #E9E8E8;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.20);
+}
+
 .imagen{
     border-radius: 1rem;
     width: 140px;
@@ -5,7 +304,10 @@
 }
 
 .producto{
+
     display: flex;
+    margin-left: -1.5rem ;
+    margin-right: 1.4rem ;
     margin-top: 1rem;
     margin-bottom: 1rem;
     background-color: beige;

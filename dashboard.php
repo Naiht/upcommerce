@@ -5,89 +5,159 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/dashboard.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/dashboard-fnc.js"></script>
 </head>
 <body>
     <?php include './nav_bar.php' ?>    
 
-    <!--Modificar tienda HTML-->
-    <div class ="modificartienda" >
-        <p>Modificar tienda</p>
-        <form action="" method="POST" enctype="multipart/form-data">
-        
-            <input type="text" name ="nombretm" placeholder="Nombre Tienda">
-            <input type="text" name ="idum" placeholder="idtienda">
-            <p>Seleccione color del banner</p>
-            <input type="color" name ="colorbanm" placeholder="colo banner">
-            
-            <input type="file" name="imgtm">
-            <input name = "modt" type="submit" value="Aceptar">
-        </form>
-    </div>
+    <?php 
+        include("conexion.php");
+        session_start();
+        $id=$_SESSION['id'];
+        $correo=$_SESSION['email'];
+        $nom=$_SESSION['nombre'];
 
-    <!--Lista de productos del panel-->
-    <div class = "productos-lst">
-        <div class="producto">
-            <img src="img/productos/mouse2.png" class="imagen">
-            <div class="item-content">
-                <p class="nom-prod">mouse MSI ds100</p>
-                <p class="precio-prod">20.00$</p>
-                <p class="cantidad"> cantidad: 1</p>
-            </div>
+        $query = "select t.id_tienda, t.nombre_t, t.color_ban, t.foto from usuarios u inner join tiendas t on u.id_usuario = t.id_usuario where u.id_usuario = $id";
+        $resultado = $conexion->query($query);
+        $inft = $resultado ->fetch_assoc();
+    ?>   
+
+    <div class = "contTotal">
+        <!--barr Lateral-->
+        <div class="sidebar-navigation" >
+            <ul>
+                <li class="active">
+                    <i class="fa fa-store"></i>
+                    <span class="tooltip">Tienda</span>
+                </li>
+                <li>
+                    <i class="fa fa-dollar"></i>
+                    <span class="tooltip">Ventas</span>
+                </li>
+            </ul>
         </div>
+        
+         <!--Lateral-->
+        <div>
+            <!--Modificar tienda HTML-->
+            <div class ="modificartienda" >
+                <div class = "Header-txt">
+                    <p>Modificar Tienda</p>   
+                </div>
+
+                <form class = "form-modtienda" action="" method="POST" enctype="multipart/form-data">
+                    <p>Color del banner y foto de tienda</p>
+                    <input class = "colorp" type="color" name ="colorbanm" placeholder="colo banner" value="<?php echo $inft['color_ban'] ?>">
+                    
+                    <div class="avatar-wrapper">
+                        <img class="profile-pic" src="data:image/jpg;base64, <?php echo base64_encode($inft['foto']); ?>" />
+                        <div class="upload-button">
+                            <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                        </div>
+                        <input name="imgtm" class="file-upload" type="file" accept="image/*"/>
+                    </div>
+
+                    <div class = "cont-btnnombre">
+                        <div class="input-field">
+                            <i class="fas fa-store"></i>
+                            <input type="text" name ="nombretm" placeholder="Nombre Tienda" value="<?php echo $inft['nombre_t'] ?>">
+                        </div>
+
+                        <input class= "btn" name = "modt" type="submit" value="Aceptar" OnClick="test();">
+                    </div>
+                </form>
+            </div>
+
+            <!--Lista de productos del panel-->
+            <div class = "productoslst">
+                <div class = "Header-txt">
+                    <p>Productos en tienda</p>   
+                </div>
+                
+                <?php
+                    $query = "SELECT * FROM productos";
+                    $resultado = $conexion->query($query);
+                    $cont = [];
+                    while($row = $resultado ->fetch_assoc()){
+                    ?>
+                        <div class="producto">
+                                <img src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>" class="imagen">
+                                <div class="item-content">
+                                    <p class="nom-prod"><?php echo $row['nombrep']; ?></p>
+                                    <p class="precio-prod">Precio : <?php echo $row['precio']; ?></p>
+                                    <p class="cantidad"> cantidad: <?php echo $row['cantidad']; ?></p>
+                                </div>
+                        </div>
+                <?php
+                    }
+                ?> 
+            </div>
+
+
+            <!--Ingresar un producto-->
+            <div class ="ingresarproducto" >
+                <p class = "ingp-titu">Ingresar producto</p>
+                <form action="producots_fnc.php" method="POST" enctype="multipart/form-data">
+
+                    <input type="file" name="img">
+                    
+                    <p>Nombre del producto</p>
+                    <div class="input-field">
+                        <i class="fas fa-store"></i>
+                        <input type="text" name ="nombre" placeholder="Nombre producto">
+                    </div>
+                    
+                    <p>Descripcion</p>
+                    <div class="input-field">
+                        <i class="fas fa-store"></i>
+                        <input type="text" name ="desc" placeholder="Descripcion">
+                    </div>
+
+                    <p>Precio</p>
+                    <div class="input-field">
+                        <i class="fas fa-store"></i>
+                        <input type="text" name ="precio" placeholder="Precio">
+                    </div>
+
+                    <p>Cantidad</p>
+                    <div class="input-field">
+                        <i class="fas fa-store"></i>
+                        <input type="number" name ="cantidad" placeholder="Cantidad">
+                    </div>
+                
+
+                    <input class= "btn" type="submit" value="Aceptar">
+                </form>
+            </div>
+
+        </div>
+
+
     </div>
-
-    <!--Ingresar un producto-->
-    <div class ="ingresarproducto" >
-        <p>Ingresar productos</p>
-        <form action="producots_fnc.php" method="POST" enctype="multipart/form-data">
-
-            <input type="text" name ="nombre" placeholder="Nombre">
-            <input type="text" name ="desc" placeholder="Descripcion">
-            <input type="text" name ="idt" placeholder="idtienda">
-            <input type="text" name ="precio" placeholder="precio">
-            <input type="number" name ="cantidad" placeholder="cantidad">
-            
-            <input type="file" name="img">
-            <input type="submit" value="Aceptar">
-        </form>
-    </div>
-
-    <!--Ingresar una tienda-->
-    <div class ="ingresartienda" >
-        <p>Ingresar tienda</p>
-        <form action="" method="POST" enctype="multipart/form-data">
-
-            <input type="text" name ="nombret" placeholder="Nombre Tienda">
-            <input type="text" name ="idu" placeholder="idusuario">
-            <p>Seleccione color del banner</p>
-            <input type="color" name ="colorban" placeholder="colo banner">
-            <input type="file" name="img">
-            <input name = "ingreprod" type="submit" value="Aceptar">
-        </form>
-    </div>
-
 
     <?php 
             include("conexion.php");
-            //Modificar producto
+            //Modificar tienda
             if(isset($_POST["modt"])){
                 $nombre = $_POST['nombretm'];
-                $idt = $_POST['idum'];
+                $idtm = $inft['id_tienda'];
                 $fechaActual = date('Y-m-d');
                 $color = $_POST['colorbanm'];
                
                 $foto = addslashes(file_get_contents($_FILES['imgtm']['tmp_name']));
      
-                $query = "update tiendas set nombre_t = '$nombre',creacion_fecha = '$fechaActual', color_ban = '$color' , foto = '$foto' where id_tienda = 1";
+                $query = "update tiendas set nombre_t = '$nombre',creacion_fecha = '$fechaActual', color_ban = '$color' , foto = '$foto' where id_tienda = $idtm";
         
                 $resul = $conexion->query($query);
         
-                if($resul){
-                   echo '<script> alert("Tienda modificada correctamente"); </script>'; 
+                if($resul > 0){
+                    header("Location: dashboard.php");
                 }else{
                     echo "no"; 
                 }
             }
+
             //Ingresar un producto
             if(isset($_POST["ingreprod"])){
                 $nombre = $_POST['nombre'];
