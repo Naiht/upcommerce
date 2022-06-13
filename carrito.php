@@ -14,7 +14,7 @@
     </div>
     <div class = "padre">
         <div class = "carrito">
-            <script src="js/carrito-fnc.js"></script>
+            <!---<script src="js/carrito-fnc.js"></script>-->
         </div>
         <p class="preciototal">100.00$</p>
         <button class="pagar">pagar</button>

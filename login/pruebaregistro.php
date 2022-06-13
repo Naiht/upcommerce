@@ -29,7 +29,9 @@
 
                             if($result->num_rows>0){
                                 $row=mysqli_fetch_assoc($result);
+                                $_SESSION['id']=$row['id_usuario'];
                                 $_SESSION['email']=$row['email'];
+                                $_SESSION['nombre']=$row['nombres'];
                                 header("Location: ../index.php");
                             }else{
                                 echo "<script>alert('La contraseña o el correo son incorrectos')</script>";

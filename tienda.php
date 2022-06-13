@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylestienda.css">
     <script src="js/funcion.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <title>Tienda</title>
 </head>
 <body>
-<<<<<<< HEAD
+    <?php
+        session_start();
+        $user=$_SESSION['nombre'];
+        echo "<h1> $user </h1>";
+        echo "<a href='login/salir.php'> logout </a>"
+    ?>
     <?php include './nav_bar.php' ?>    
     
     <?php 
-=======
-    <?php include './nav_bar.php'?>    
-
-    <div class="encabezado">
-        <?php 
->>>>>>> 92a2a7c6a2adebb2efbcdf737c11f291b3ff7138
             include("conexion.php");
 
             $query = "SELECT * FROM tiendas";
@@ -46,13 +46,14 @@
             $cont = [];
             while($row = $resultado ->fetch_assoc()){
             ?>
-                <div class="producto" onclick="detalle();">
+                <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto" onclick="detalle();" >
                 <img class="imgproducto" src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>">
                 <div class="div_nombre">
                         <p class="nombre"><?php echo $row['nombrep']; ?></p>
                 </div>
                 <p class="precio"><?php echo $row['precio']; ?> C$</p>
                 </div>`
+                
         <?php
             }
         ?> 
@@ -68,7 +69,7 @@
                         <img class="img_prod" src="img/productos/mouse2.png">
                     </div>
                     <div class="detalles_producto">
-                        <p class="nom_prod">Mouse MSI 5</p>
+                        <p id="nomjs" class="nom_prod">sfg</p>
                         <div class="divdetalle">
                             <p class="detalles_prod">El Interceptor DS100 viene con un software exclusivo de MSI, el cual ofrece control total sobre el mouse. Que contiene manual y una guía de instalación.En la solapa principal (Sensitivity) podemos personalizar los perfiles y los modos, configurando los 7 botones a nuestro antojo y podemos ajustar la resolución DPI por separado para cada perfil, o bien usar el botón de ajuste de DPI.</p>
                         </div>
