@@ -71,6 +71,9 @@
                 </form>
             </div>
 
+
+            <button class="button-88" onclick="ingresoprod();">ingresar producto</button>
+
             <!--Lista de productos del panel-->
             <div class = "productoslst">
                 <div class = "Header-txt">
@@ -96,7 +99,6 @@
                 ?> 
             </div>
 
-            <button onclick="ingresoprod();">ingresar producto</button>
             <!--Ingresar un producto-->
             <div class="center">
                 <input type="checkbox" id="ingresar_producto">
