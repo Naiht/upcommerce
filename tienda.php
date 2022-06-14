@@ -48,6 +48,7 @@
             $resultado = $conexion->query($query);
             while($row = $resultado ->fetch_assoc()){
             ?>
+<<<<<<< HEAD
                 <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto" onclick="detalle();" >
                 <img class="imgproducto" src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>">
                 <div class="div_nombre">
@@ -96,6 +97,34 @@
                 </div>
             </div>
         </div>
+=======
+                <form action="detalle_producto.php" method="POST" class="detalles-producto" type="submit">
+                    <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto">
+                        <img class="imgproducto" src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>">
+                        <div class="div_nombre">
+                            <p class="nombre"><?php echo $row['nombrep']; ?></p>
+                        </div>
+                        <p class="precio"><?php echo $row['precio']; ?> C$</p>
+                        <!--boton-->
+                        <input name="verproducto" type="submit" value="detalles">
+                        <!--datos en oculto-->
+                        <input type="hidden" name="nomproducto" value="<?php echo $row['nombrep']; ?>">
+                        <input type="hidden" name="desproducto" value="<?php echo $row['descripcion']; ?>">
+                        <input type="hidden" name="preproducto" value="<?php echo $row['precio']; ?>">
+                        <input type="hidden" name="fechapubli" value="<?php echo $row['fecha_publi']; ?>">
+                        <input type="hidden" name="cantproducto" value="<?php echo $row['cantidad']; ?>">
+                        
+                        
+
+                    </div>
+                    <script>
+                        pasardato(<?php echo json_encode($row); ?>);
+                    </script>
+                </form>
+        <?php
+            }
+        ?> 
+>>>>>>> 3a11c872d13ae9821a6508d7d5407d2c798b92e6
     </div>
 </body>
 </html>
