@@ -16,7 +16,7 @@
       height: 140px;
   }
   
-  .producto{
+.producto{
   
       display: flex;
       margin-left: -1.5rem ;
@@ -26,7 +26,11 @@
       background-color: beige;
       border-radius: 1rem;
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.20);
-  }
+}
+
+.producto:hover{
+    cursor: pointer;
+}
   
   .item-content{
       /*background-color: #9230de;*/

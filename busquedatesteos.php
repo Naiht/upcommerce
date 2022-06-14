@@ -13,11 +13,11 @@
         
         <?php 
                 include("conexion.php");
-
-                $id=$_SESSION['id'];
-                $correo=$_SESSION['email'];
-                $nom=$_SESSION['nombre'];
-                
+                if(isset($_SESSION["nombre"])){
+                    $id=$_SESSION['id'];
+                    $correo=$_SESSION['email'];
+                    $nom=$_SESSION['nombre'];
+                }
                 $busq =$_GET['busqueda'];
         ?>
 
@@ -41,10 +41,11 @@
                                     </div>
                                     <input type="hidden" name="idtienda" value="<?php
                                     echo $row['id_tienda']?>">
+
+                                    <!--boton-->
+                                    <input id="btn-producto" name="vista" type="submit" value="tienda" style="display:none">
                             </div>
                             
-                            <!--boton-->
-                            <input id="btn-producto" name="vista" type="submit" value="tienda">
                             <!--datos en oculto-->
                             <input type="hidden" name="nomproducto" value="<?php echo $row['nombrep']; ?>">
                             <input type="hidden" name="desproducto" value="<?php echo $row['descripcion']; ?>">
@@ -64,7 +65,7 @@
     <script>
         $(document).ready(function() {
             document.addEventListener('click', function clickHandler(event) {
-                var hasClass = event.target.classList.contains('producto2');
+                var hasClass = event.target.classList.contains('producto');
                 console.log(hasClass);
                 
                 if(hasClass){

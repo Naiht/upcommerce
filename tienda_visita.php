@@ -61,7 +61,7 @@
                         </div>
                         <p class="precio"><?php echo $row['precio']; ?> C$</p>
                         <!--boton-->
-                        <input name="verproducto" type="submit" value="detalles">
+                        <input id="btn-producto" name="verproducto" type="submit" value="detalles" style="display:none">
                         <!--datos en oculto-->
                         <input type="hidden" name="nomproducto" value="<?php echo $row['nombrep']; ?>">
                         <input type="hidden" name="desproducto" value="<?php echo $row['descripcion']; ?>">
@@ -79,5 +79,20 @@
             }
         ?> 
     </div>
+
+
+    <script>
+        $(document).ready(function() {
+            document.addEventListener('click', function clickHandler(event) {
+                var hasClass = event.target.classList.contains('producto');
+
+                if(hasClass){
+                    var hola = event.target;
+                    event.target.querySelector('#btn-producto').click();
+                }
+            });
+        });
+    </script>
+    
 </body>
 </html>
