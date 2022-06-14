@@ -27,8 +27,6 @@
             $idt = $tiendav['id_tienda'];
     ?>
 
-    
-    <p></p>   
     <div class="encabezado" style="background: <?php echo $tiendav['color_ban']; ?>">
 
     <div class="imagentienda">
@@ -63,6 +61,8 @@
                         <input type="hidden" name="preproducto" value="<?php echo $row['precio']; ?>">
                         <input type="hidden" name="fechapubli" value="<?php echo $row['fecha_publi']; ?>">
                         <input type="hidden" name="cantproducto" value="<?php echo $row['cantidad']; ?>">
+                        <input type="hidden" name="idproducto"
+                        value="<?php echo $row['id_producto']; ?>">
                         
                         
 
