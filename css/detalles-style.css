@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+body, input{
+    background: #ffffff;
+    font-family: "Poppins", sans-serif;
+    
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*detalles del producto*/
+
+.dos{
+    margin: auto;
+    margin-top: 6rem;
+    display: flex;
+    width: 1090px;
+    border-radius: 1rem;
+    background-color: antiquewhite;
+} 
+.imagen_producto{
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+.img_prod{
+    
+    border-radius: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    width: 500px;
+    height: 500px;
+}
+.detalles_producto{
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.nom_prod{
+    text-align: center;
+    margin: 1.5rem;
+    font-size:30px;
+    font-weight: 600;
+}
+.divdetalle{
+    height: 350px;
+    overflow: auto;
+}
+.detalles_prod{
+    text-align: justify;
+    margin: 1.5rem;
+    font-size: 25px;
+}
+.precio_prod{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+.botones{
+   text-align: center;
+   position: relative;
+   
+}
+.otros{
+    display: flex;
+    font-size: 15px;
+    font-weight: 600;
+}
+.inventario{
+    margin-right: 14rem;
+}
+
+/*boton negociar*/
+.negociar {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    margin: 0.5rem;
+    cursor: pointer;
+}   
+.negociar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #113aac;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+} 
+.negociar:hover {
+    color: #e8e8e8;
+}  
+.negociar:hover::before {
+    width: 100%;
+}
+   
+/*boton agregar*/
+.agregar {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    margin: 0.5rem;
+    cursor: pointer;
+}  
+.agregar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #0cad2f;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+}   
+.agregar:hover {
+    color: #e8e8e8;
+}   
+.agregar:hover::before {
+    width: 100%;
+}
+/*boton regresar*/
+.regresar {
+    
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    margin: 0.5rem;
+    margin-left: 12rem;
+    cursor: pointer;
+}   
+.regresar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #cc2519;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+} 
+.regresar:hover {
+    color: #e8e8e8;
+}  
+.regresar:hover::before {
+    width: 100%;
+}

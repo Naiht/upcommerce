@@ -13,13 +13,11 @@
 <body>
     <?php
         session_start();
-        if(isset($_SESSION["nombres"])){
+        if(isset($_SESSION["nombre"])){
 
             $id=$_SESSION['id'];
             $correo=$_SESSION['email'];
             $nom=$_SESSION['nombre'];
-        }else{
-            
         }
     ?>    
 
@@ -36,9 +34,9 @@
             <li id="nav_carrito" onclick="btnCarrito()"><i class="fa fa-cart-shopping"></i></li>
 
             <?php 
-                if(isset($_SESSION["nombres"])){
+                if(isset($_SESSION["nombre"])){
 
-                    echo '<script>alert("si");</script>';
+                    //echo '<script>alert("si");</script>';
                     echo '<li id="nav_user" onclick=""><i class="fa fa-user"></i></li>';
                     echo '  <div class="contopciones">
                                 <ul>
@@ -48,7 +46,7 @@
                                 </ul>
                             </div>';
                 }else{
-
+                   //echo '<script>alert("no");</script>';
                     echo '<li id="nav_user" onclick="btnIniciarSesion()"><i class="fa fa-user"></i></li>';
                 }
             ?>    
