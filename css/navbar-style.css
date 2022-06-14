@@ -101,9 +101,13 @@ header {
 
 a{
     text-decoration: none;
+    color: black 
 }
-
 
 a:visited{ 
     color: black 
+}
+
+.logo2:hover{
+    cursor: pointer;
 }
