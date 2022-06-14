@@ -16,14 +16,9 @@
                 $id=$_SESSION['id'];
                 $correo=$_SESSION['email'];
                 $nom=$_SESSION['nombre'];
-<<<<<<< HEAD
-                
+
+
                 $busq = "p";
-=======
-
-
-                $busq = "m";
->>>>>>> 68295effc53a90d6b3babe41228b75e335590e49
         ?>
 
 
