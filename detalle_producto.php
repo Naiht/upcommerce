@@ -1,12 +1,12 @@
 <?php
     include("conexion.php");
-    if(isset($_POST['verproducto'])){
-        $nombre=$_POST['nomproducto'];
-        $descripcion=$_POST['desproducto'];
-        $precio=$_POST['preproducto'];
-        $fecha=$_POST['fechapubli'];
-        $cantidad=$_POST['cantproducto'];
-        $id=$_POST['idproducto'];
+    if(isset($_GET['verproducto'])){
+        $nombre=$_GET['nomproducto'];
+        $descripcion=$_GET['desproducto'];
+        $precio=$_GET['preproducto'];
+        $fecha=$_GET['fechapubli'];
+        $cantidad=$_GET['cantproducto'];
+        $id=$_GET['idproducto'];
         
 
         $query = "SELECT foto FROM productos WHERE id_producto = $id";
@@ -23,16 +23,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/detalles-style.css">
     <title>Document</title>
 </head>
 <body>
-<link rel="stylesheet" href="css/detalles-style.css">
+
         
     <div class="dos">          
         <div class="imagen_producto">
             <img class="img_prod" src="data:image/jpg;base64, <?php echo base64_encode($prod['foto']); ?>">
             <div class="btn-regresar">
                 <button class="regresar" onclick="regreso();">Regresar</button>
+
+                <input type="hidden" name="tienda" class="regresar" onclick="regreso();"></button>
+                <p id="vsttienda">Visitar Tienda</p>
             </div>
         </div>
         <div class="detalles_producto">
@@ -51,6 +55,7 @@
             </div>
         </div>
     </div>
+    
     <script>
         function regreso(){
             location.href = "tienda.php";

@@ -4,11 +4,10 @@
     padding: 0;
   }
 
-.ifNav{
-    padding: 0;
-    margin: 0;
-    margin-bottom: -5.5rem;
-    width: 100% !important;
+body, input{
+    background: #fefbfb;
+    font-family: "Poppins", sans-serif;
+    
 }
 
 
@@ -25,7 +24,7 @@
   }
   
   #txtbanner{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
   }
   
@@ -264,4 +263,12 @@ input[type="checkbox"]{
 }
 .inventario{
   margin-right: 14rem;
+}
+
+.titulosp{
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 2rem;
 }

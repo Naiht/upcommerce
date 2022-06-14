@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/index-style.css">
-    <script src="js/nav_bar.js"></script>
-
     <title>UpCommerce</title>
 </head>
 <body>
@@ -22,36 +21,55 @@
         <img id="imgbanner" src="img/index_banner/bannerlogo.png" alt="">
     </div>
 
+    <p class="titulosp">Nuevos Productos</p>
+
     <div class="grid-layout">
-        <div class="center"><!--div de los detalles del producto -->
-            <input type="checkbox" id="detalle">
-            <div class="fondoneg container_producto"></div>
-            <div class="container_producto">
-                <label for="detalle" class="close-btn fas fa-time" title="close">X</label>
-                <div class="dos">
-                    <div class="imagen_producto">
-                        <img class="img_prod" src="img/productos/mouse2.png">
-                    </div>
-                    <div class="detalles_producto">
-                        <p class="nom_prod">Mouse MSI ds100</p>
-                        <div class="divdetalle">
-                            <p class="detalles_prod">El Interceptor DS100 viene con un software exclusivo de MSI, el cual ofrece control total sobre el mouse. Que contiene manual y una guía de instalación.En la solapa principal (Sensitivity) podemos personalizar los perfiles y los modos, configurando los 7 botones a nuestro antojo y podemos ajustar la resolución DPI por separado para cada perfil, o bien usar el botón de ajuste de DPI.</p>
+            <?php
+                include("conexion.php");
+
+                $query = "SELECT * FROM productos";
+                $resultado = $conexion->query($query);
+                while($row = $resultado ->fetch_assoc()){
+                ?>
+                    <form action="detalle_producto.php" method="GET" class="detalles-producto" type="submit">
+                        <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto">
+                            
+                            <img class="imgproducto" src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>">
+                            <div class="div_nombre">
+                                <p class="nombre"><?php echo $row['nombrep']; ?></p>
+                            </div>
+                            <p class="precio"><?php echo $row['precio']; ?> C$</p>
+                            
+                            <!--boton-->
+                            <input id="btn-producto" name="verproducto" type="submit" value="detalles" style="display:none;">
+                            <!--datos en oculto-->
+                            <input type="hidden" name="nomproducto" value="<?php echo $row['nombrep']; ?>">
+                            <input type="hidden" name="desproducto" value="<?php echo $row['descripcion']; ?>">
+                            <input type="hidden" name="preproducto" value="<?php echo $row['precio']; ?>">
+                            <input type="hidden" name="fechapubli" value="<?php echo $row['fecha_publi']; ?>">
+                            <input type="hidden" name="cantproducto" value="<?php echo $row['cantidad']; ?>">
+                            <input type="hidden" name="idproducto"
+                            value="<?php echo $row['id_producto']; ?>">
                         </div>
-                        <p class="precio_prod">20.00$</p>
-                        <div class="botones">
-                            <button class="negociar">Negociar</button>
-                            <BUtton class="agregar">Agregar</BUtton>
-                        </div>
-                        <div class="otros">
-                            <p class="inventario">Existencias 3</p>
-                            <p class="fecha">Publicado el 17/05/22</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </form>
+            <?php
+                }
+            ?> 
         </div>
     </div>
 
+    <script>
+        $(document).ready(function() {
+            document.addEventListener('click', function clickHandler(event) {
+                var hasClass = event.target.classList.contains('producto');
+
+                if(hasClass){
+                    var hola = event.target;
+                    event.target.querySelector('#btn-producto').click();
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -108,6 +108,11 @@ a:visited{
     color: black 
 }
 
+.logo2{
+    font-weight: 600;
+    font-size: 1rem;
+}
+
 .logo2:hover{
     cursor: pointer;
 }
