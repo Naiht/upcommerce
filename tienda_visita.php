@@ -70,8 +70,6 @@
                         <input type="hidden" name="cantproducto" value="<?php echo $row['cantidad']; ?>">
                         <input type="hidden" name="idproducto" value="<?php echo $row['id_producto']; ?>">
                         
-                        
-
                     </div>
                 </form>
         <?php

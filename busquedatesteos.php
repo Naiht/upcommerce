@@ -28,39 +28,45 @@
                 $query = "SELECT * FROM productos WHERE nombrep like '%$busq%'";
                 $resultado = $conexion->query($query);
                 $cont = [];
-                while($row = $resultado ->fetch_assoc()){
-                  ?>
-                        
-                        <div class="producto2" precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>">
-                            <form action="tienda_visita.php" method="GET" class="atiendavisita">
-                            <div class="producto">
-                                    <img src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>" class="imagen">
-                                    <div class="item-content">
-                                        <p class="nom-prod"><?php echo $row['nombrep']; ?></p>
-                                        <p class="precio-prod">Precio : <?php echo $row['precio']; ?></p>
-                                    </div>
-                                    <input type="hidden" name="idtienda" value="<?php
-                                    echo $row['id_tienda']?>">
-
-                                    <!--boton-->
-                                    <input id="btn-producto" name="vista" type="submit" value="tienda" style="display:none">
-                            </div>
-                            
-                            <!--datos en oculto-->
-                            <input type="hidden" name="nomproducto" value="<?php echo $row['nombrep']; ?>">
-                            <input type="hidden" name="desproducto" value="<?php echo $row['descripcion']; ?>">
-                            <input type="hidden" name="preproducto" value="<?php echo $row['precio']; ?>">
-                            <input type="hidden" name="fechapubli" value="<?php echo $row['fecha_publi']; ?>">
-                            <input type="hidden" name="cantproducto" value="<?php echo $row['cantidad']; ?>">
-                            <input type="hidden" name="idproducto"
-                            value="<?php echo $row['id_producto']; ?>">
-                        </div>
-
-                     </form>
+                if($resultado ->fetch_assoc()>0){
+                    while($row = $resultado ->fetch_assoc()){
+                        ?>
+                              
+                              <div class="producto2" precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>">
+                                  <form action="tienda_visita.php" method="GET" class="atiendavisita">
+                                  <div class="producto">
+                                          <img src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>" class="imagen">
+                                          <div class="item-content">
+                                              <p class="nom-prod"><?php echo $row['nombrep']; ?></p>
+                                              <p class="precio-prod">Precio : <?php echo $row['precio']; ?></p>
+                                          </div>
+                                          <input type="hidden" name="idtienda" value="<?php
+                                          echo $row['id_tienda']?>">
+      
+                                          <!--boton-->
+                                          <input id="btn-producto" name="vista" type="submit" value="tienda" style="display:none">
+                                  </div>
+                                  
+                                  <!--datos en oculto-->
+                                  <input type="hidden" name="nomproducto" value="<?php echo $row['nombrep']; ?>">
+                                  <input type="hidden" name="desproducto" value="<?php echo $row['descripcion']; ?>">
+                                  <input type="hidden" name="preproducto" value="<?php echo $row['precio']; ?>">
+                                  <input type="hidden" name="fechapubli" value="<?php echo $row['fecha_publi']; ?>">
+                                  <input type="hidden" name="cantproducto" value="<?php echo $row['cantidad']; ?>">
+                                  <input type="hidden" name="idproducto"
+                                  value="<?php echo $row['id_producto']; ?>">
+                              </div>
+      
+                           </form>
+                  <?php
+                        }
+                   ?> 
+              </div>
             <?php
-                  }
-             ?> 
-        </div>
+            }else{
+                echo '<p>El producto no existe</p>';
+            }?>
+
 
     <script>
         $(document).ready(function() {
