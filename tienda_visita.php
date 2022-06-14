@@ -2,13 +2,8 @@
       include("conexion.php");
       if(isset($_GET['vista'])){
 
-        /*$query = "SELECT foto FROM productos WHERE id_producto = $id";
-        $resultado = $conexion->query($query);
-  
-        $prod = $resultado ->fetch_assoc();*/
         $idtienda=$_GET['idtienda'];
-        echo "<script>$idtienda</script>";
-  
+        
         include './nav_bar.php';
       }
 ?>

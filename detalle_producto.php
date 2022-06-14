@@ -1,6 +1,22 @@
 <?php
     include("conexion.php");
+    include './nav_bar.php';
     if(isset($_GET['verproducto'])){
+        $nombre=$_GET['nomproducto'];
+        $descripcion=$_GET['desproducto'];
+        $precio=$_GET['preproducto'];
+        $fecha=$_GET['fechapubli'];
+        $cantidad=$_GET['cantproducto'];
+        $id=$_GET['idproducto'];
+        $idprodcarrito=$id;
+        $query = "SELECT foto, id_tienda FROM productos WHERE id_producto = $id";
+        $resultado = $conexion->query($query);
+
+        $prod = $resultado ->fetch_assoc();
+    }
+
+
+    if(isset($_GET['vista'])){
         $nombre=$_GET['nomproducto'];
         $descripcion=$_GET['desproducto'];
         $precio=$_GET['preproducto'];
@@ -12,8 +28,6 @@
         $resultado = $conexion->query($query);
 
         $prod = $resultado ->fetch_assoc();
-
-        include './nav_bar.php';
     }
 ?>
 <!DOCTYPE html>
@@ -23,7 +37,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/detalles-style.css">
-    <title>Document</title>
+    <title>Producto</title>
 </head>
 <body>
 
@@ -36,10 +50,12 @@
                     <button class="regresar" onclick="regreso();">Regresar</button>
 
                     <input type="hidden" name="tienda" class="regresar" onclick="regreso();"></button>
-                    <p id="vsttienda">Visitar Tienda</p>
+                    <p id="vsttienda" class="tienda">Visitar Tienda</p>
+ 
+
                 </div>
             </div>
-            <div class="detalles_producto">
+            <div class="detalles_producto" >
                 <p class="nom_prod"><?php echo $nombre ?></p>
                 <div class="divdetalle">
                     <p class="detalles_prod"><?php echo $descripcion ?></p>
@@ -58,6 +74,24 @@
         </div>
     </form>
     
+
+    <form action="tienda_visita.php" method="GET" >
+        <input id="btn-producto2" name="vista" type="submit" value="detalles" style="display:none">
+        <input type="hidden" name="idtienda" value="<?php echo $prod['id_tienda']?>">
+    </form>
+
+
+    <script>
+        $(document).ready(function() {
+            document.addEventListener('click', function clickHandler(event) {
+                var hasClass = event.target.classList.contains('tienda');
+                if(hasClass){
+                    var btn = document.getElementById('btn-producto2').click();
+                }
+            });
+        });
+    </script>
+
     <script>
         function regreso(){
             location.href = "tienda.php";
