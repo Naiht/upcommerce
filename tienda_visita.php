@@ -53,7 +53,7 @@
             $resultado = $conexion->query($query);
             while($row = $resultado ->fetch_assoc()){
             ?>
-                <form action="detalle_producto.php" method="POST" class="detalles-producto" type="submit">
+                <form action="detalle_producto.php" method="GET" class="detalles-producto" type="submit">
                     <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto">
                         <img class="imgproducto" src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>">
                         <div class="div_nombre">
@@ -68,8 +68,7 @@
                         <input type="hidden" name="preproducto" value="<?php echo $row['precio']; ?>">
                         <input type="hidden" name="fechapubli" value="<?php echo $row['fecha_publi']; ?>">
                         <input type="hidden" name="cantproducto" value="<?php echo $row['cantidad']; ?>">
-                        <input type="hidden" name="idproducto"
-                        value="<?php echo $row['id_producto']; ?>">
+                        <input type="hidden" name="idproducto" value="<?php echo $row['id_producto']; ?>">
                         
                         
 
