@@ -16,8 +16,14 @@
                 $id=$_SESSION['id'];
                 $correo=$_SESSION['email'];
                 $nom=$_SESSION['nombre'];
+<<<<<<< HEAD
                 
                 $busq = "p";
+=======
+
+
+                $busq = "m";
+>>>>>>> 68295effc53a90d6b3babe41228b75e335590e49
         ?>
 
 
@@ -29,13 +35,18 @@
                 $cont = [];
                 while($row = $resultado ->fetch_assoc()){
                   ?>
-                     <div class="producto">
-                             <img src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>" class="imagen">
-                             <div class="item-content">
-                                 <p class="nom-prod"><?php echo $row['nombrep']; ?></p>
-                                 <p class="precio-prod">Precio : <?php echo $row['precio']; ?></p>
-                            </div>
-                    </div>
+                     <form action="tienda_visita.php" method="GET" class="atiendavisita">
+                        <div class="producto">
+                                <img src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>" class="imagen">
+                                <div class="item-content">
+                                    <p class="nom-prod"><?php echo $row['nombrep']; ?></p>
+                                    <p class="precio-prod">Precio : <?php echo $row['precio']; ?></p>
+                                </div>
+                                <input name="vista" type="submit" value="tienda"> 
+                                <input type="hidden" name="idtienda" value="<?php
+                                echo $row['id_tienda']?>">
+                        </div>
+                     </form>
             <?php
                   }
              ?> 
