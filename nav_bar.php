@@ -7,8 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/navbar-style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="js/funcion.js"></script>
     <script src="js/nav_bar.js"></script>
+    <script src="js/cerraropnav.js"></script>
 </head>
 <body>
     <?php
@@ -22,7 +24,7 @@
     ?>    
 
     <header>
-        <a class = "logoa" href="index.php"><p>UpCommerce</p></a>
+        <p onclick="btnPrinci()" class="logo2">UpCommerce</p>
        
        <form class="nav_form" action="">
         <input id="nav_busq" type="text" placeholder="Buscar">
@@ -36,9 +38,8 @@
             <?php 
                 if(isset($_SESSION["nombre"])){
 
-                    //echo '<script>alert("si");</script>';
                     echo '<li id="nav_user" onclick=""><i class="fa fa-user"></i></li>';
-                    echo '  <div class="contopciones">
+                    echo '  <div id="opcion" class="invopciones">
                                 <ul>
                                     <a href="tienda.php"><li><i class="fa fa-shop"></i>Mi tienda</li></a> 
                                     <a href="dashboard.php"><li><i class="fa fa-dashboard"></i>Panel de control</li></a>
@@ -46,7 +47,6 @@
                                 </ul>
                             </div>';
                 }else{
-                   //echo '<script>alert("no");</script>';
                     echo '<li id="nav_user" onclick="btnIniciarSesion()"><i class="fa fa-user"></i></li>';
                 }
             ?>    
