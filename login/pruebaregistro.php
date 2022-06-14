@@ -32,7 +32,7 @@
                                 $_SESSION['id']=$row['id_usuario'];
                                 $_SESSION['email']=$row['email'];
                                 $_SESSION['nombre']=$row['nombres'];
-                                header("Location: ../index.php");
+                                header("Location: ../creatienda.php");
                             }else{
                                 echo "<script>alert('La contraseña o el correo son incorrectos')</script>";
                             }
