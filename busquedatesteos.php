@@ -17,7 +17,7 @@
                 $correo=$_SESSION['email'];
                 $nom=$_SESSION['nombre'];
                 
-                $busq = "p";
+                $busq =$_GET['busqueda'];
         ?>
 
 

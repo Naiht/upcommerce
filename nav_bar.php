@@ -26,10 +26,11 @@
     <header>
         <p onclick="btnPrinci()" class="logo2">UpCommerce</p>
        
-       <form class="nav_form" action="">
-        <input id="nav_busq" type="text" placeholder="Buscar">
+       <form class="nav_form" action="busquedatesteos.php" name="busq" method="_GET">
+        <input name="busqueda" id="nav_busq" type="text" placeholder="Buscar">
         <button id="nav_btnbusq"><i class="fas fa-search"></i></button>
        </form>
+
        <nav>
            <ul class="nav_opciones">
             <li id="nav_noti"><i class="fa fa-bell"></i></li>
