@@ -17,8 +17,10 @@
                 $query="update carrito set cantidad=cantidad+1 where producto='$idproducto'";
                 $carrito = $conexion->query($query);
             }
+            echo "<script>alert('Producto agregado al carrito')</script>";
         }
     }else{
         echo "<script>alert('debes iniciar sesion')</script>";
     }
+    echo"<script>function atras(){windows.history.back();}atras();</script>";
 ?>

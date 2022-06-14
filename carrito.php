@@ -20,19 +20,22 @@
         <div class = "carrito">
             <!---<script src="js/carrito-fnc.js"></script>-->
             <?php 
-                echo "<script>alert('$usuario')</script>";
+                
                 $test = $usuario;
+                $total=0;
                 include("conexion.php");
-                $query = "select p.nombrep, p.precio,c.cantidad from productos p inner join carrito c on p.id_producto = c.producto where cliente=$test";
+                $query = "select p.nombrep, p.precio, p.foto, c.cantidad from productos p inner join carrito c on p.id_producto = c.producto where cliente=$test";
                 $resultcarrito = $conexion->query($query);
                 while($lista = $resultcarrito -> fetch_assoc()){
             ?>
                 <div class = "item">
-                    <img src="img/productos/mouse2.png" class="imagen">
+                    <img src="data:image/jpg;base64, <?php echo base64_encode($lista['foto']); ?>" class="imagen">
                     <div class="item-content">
-                        <p class="nom-prod">mouse MSI ds100</p>
-                        <p class="precio-prod">20.00$</p>
-                        <p class="cantidad"> cantidad: 1</p>
+                        <p class="nom-prod"><?php echo $lista['nombrep']; ?></p>
+                        <?php $subtotal = $lista['cantidad']*$lista['precio']; ?>
+                        <p class="precio-prod"> Subtotal <?php echo $subtotal ?> C$</p>
+                        <p class="cantidad"> cantidad: <?php echo $lista['cantidad']; ?> </p>
+                        <?php $total = $total+$subtotal ?>
                     </div>
                     <span class="borrar-producto" data-id="">X</span><!--data id se llena decuertdo al id del item no se q onda ahi supongo que mas adelante del video esta-->
                     </div>
@@ -40,7 +43,7 @@
                 }
             ?>
         </div>
-        <p class="preciototal">100.00$</p>
+        <p class="preciototal"><?php echo $total ?> C$</p>
         <button class="pagar">pagar</button>
     </div>
 </body>
