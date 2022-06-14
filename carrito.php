@@ -21,9 +21,9 @@
             <!---<script src="js/carrito-fnc.js"></script>-->
             <?php 
                 echo "<script>alert('$usuario')</script>";
+                $test = $usuario;
                 include("conexion.php");
-                //$query = "select p.nombrep, p.precio,c.cantidad from productos p inner join carrito c on p.id_producto = c.producto where cliente=$usuario";
-                $query = "select * from productos p inner join carrito c on p.id_producto = c.producto where cliente=$usuario";
+                $query = "select p.nombrep, p.precio,c.cantidad from productos p inner join carrito c on p.id_producto = c.producto where cliente=$test";
                 $resultcarrito = $conexion->query($query);
                 while($lista = $resultcarrito -> fetch_assoc()){
             ?>
