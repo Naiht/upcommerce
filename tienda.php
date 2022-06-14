@@ -28,7 +28,7 @@
     ?>
 
     
-       
+    <p></p>   
     <div class="encabezado" style="background: <?php echo $tiendav['color_ban']; ?>">
 
     <div class="imagentienda">
@@ -48,56 +48,6 @@
             $resultado = $conexion->query($query);
             while($row = $resultado ->fetch_assoc()){
             ?>
-<<<<<<< HEAD
-                <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto" onclick="detalle();" >
-                <img class="imgproducto" src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>">
-                <div class="div_nombre">
-                    <p class="nombre"><?php echo $row['nombrep']; ?></p>
-                </div>
-                <p class="precio"><?php echo $row['precio']; ?> C$</p>
-                </div>
-
-                
-    <script > 
-        var jArray= <?php echo json_encode($row);?>; 
-        alert(jArray[1][1]); 
-    </script>
-        <?php
-            }
-        ?> 
-
-
-
-
-        <div class="center"><!--div de los detalles del producto -->
-            <input type="checkbox" id="detalle">
-            <div class="fondoneg container_producto"></div>
-            <div class="container_producto">
-                <label for="detalle" class="close-btn fas fa-time" title="close">X</label>
-                <div class="dos">
-                    <?php ?>
-                    <div class="imagen_producto">
-                        <img class="img_prod" src="img/productos/mouse2.png">
-                    </div>
-                    <div class="detalles_producto">
-                        <p id="nomjs" class="nom_prod">sfg</p>
-                        <div class="divdetalle">
-                            <p class="detalles_prod">El Interceptor DS100 viene con un software exclusivo de MSI, el cual ofrece control total sobre el mouse. Que contiene manual y una guía de instalación.En la solapa principal (Sensitivity) podemos personalizar los perfiles y los modos, configurando los 7 botones a nuestro antojo y podemos ajustar la resolución DPI por separado para cada perfil, o bien usar el botón de ajuste de DPI.</p>
-                        </div>
-                        <p class="precio_prod">20.00$</p>
-                        <div class="botones">
-                            <button class="negociar">Negociar</button>
-                            <BUtton class="agregar">Agregar</BUtton>
-                        </div>
-                        <div class="otros">
-                            <p class="inventario">Existencias 3</p>
-                            <p class="fecha">Publicado el 17/05/22</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-=======
                 <form action="detalle_producto.php" method="POST" class="detalles-producto" type="submit">
                     <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto">
                         <img class="imgproducto" src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>">
@@ -117,14 +67,10 @@
                         
 
                     </div>
-                    <script>
-                        pasardato(<?php echo json_encode($row); ?>);
-                    </script>
                 </form>
         <?php
             }
         ?> 
->>>>>>> 3a11c872d13ae9821a6508d7d5407d2c798b92e6
     </div>
 </body>
 </html>

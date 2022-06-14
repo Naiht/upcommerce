@@ -22,7 +22,7 @@
     ?>    
 
     <header>
-       <p>UpCommerce</p>
+        <a class = "logoa" href="index.php"><p>UpCommerce</p></a>
        
        <form class="nav_form" action="">
         <input id="nav_busq" type="text" placeholder="Buscar">
@@ -40,9 +40,9 @@
                     echo '<li id="nav_user" onclick=""><i class="fa fa-user"></i></li>';
                     echo '  <div class="contopciones">
                                 <ul>
-                                    <li><i class="fa fa-shop"></i> Mi tienda</li>
-                                    <li><i class="fa fa-dashboard"></i>Panel de control</li>
-                                    <li><i class="fa fa-close"></i>Cerrar sesion</li>
+                                    <a href="tienda.php"><li><i class="fa fa-shop"></i>Mi tienda</li></a> 
+                                    <a href="dashboard.php"><li><i class="fa fa-dashboard"></i>Panel de control</li></a>
+                                    <a href="login/salir.php"><li><i class="fa fa-close"></i>Cerrar sesion</li></a>
                                 </ul>
                             </div>';
                 }else{
@@ -54,6 +54,6 @@
        </nav>
     </header>
 
-    <a href="login/salir.php">salir</a>
+
 </body>
 </html>

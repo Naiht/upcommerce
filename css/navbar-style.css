@@ -98,3 +98,12 @@ header {
 .contopciones ul li i{
     padding-right: 15px;
 }
+
+a{
+    text-decoration: none;
+}
+
+
+a:visited{ 
+    color: black 
+}
