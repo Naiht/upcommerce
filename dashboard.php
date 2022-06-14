@@ -21,6 +21,8 @@
         $query = "select t.id_tienda, t.nombre_t, t.color_ban, t.foto from usuarios u inner join tiendas t on u.id_usuario = t.id_usuario where u.id_usuario = $id";
         $resultado = $conexion->query($query);
         $inft = $resultado ->fetch_assoc();
+
+        $idt = $inft['id_tienda'];
     ?>   
 
     <div class = "contTotal">
@@ -76,7 +78,7 @@
                 </div>
                 
                 <?php
-                    $query = "SELECT * FROM productos";
+                    $query = "SELECT * FROM productos WHERE id_tienda = $idt";
                     $resultado = $conexion->query($query);
                     $cont = [];
                     while($row = $resultado ->fetch_assoc()){
@@ -96,11 +98,6 @@
 
             <button onclick="ingresoprod();">ingresar producto</button>
             <!--Ingresar un producto-->
-<<<<<<< HEAD
-            <div class ="ingresarproducto" >
-                <p class = "ingp-titu">Ingresar producto</p>
-                <form action="" method="POST" enctype="multipart/form-data">
-=======
             <div class="center">
                 <input type="checkbox" id="ingresar_producto">
                 <div class="fondo_negro container_ingresarproducto"></div>
@@ -124,7 +121,6 @@
                                     <i class="fas fa-store"></i>
                                     <input type="text" name ="desc" placeholder="Descripcion">
                                 </div>
->>>>>>> f93818193c39d9e8d4a57595cf7f4ea0fd8b277b
 
                                 <p>Precio</p>
                                 <div class="input-field">
@@ -143,14 +139,7 @@
                             </form>
                         </div>
                     </div>
-<<<<<<< HEAD
-                
-
-                    <input name = "ingreprodb" class= "btn" type="submit" value="Aceptar">
-                </form>
-=======
                 </div>
->>>>>>> f93818193c39d9e8d4a57595cf7f4ea0fd8b277b
             </div>
         </div>
 
@@ -183,11 +172,7 @@
             if(isset($_POST["ingreprodb"])){
                 $nombre = $_POST['nombre'];
                 $desc = $_POST['desc'];
-<<<<<<< HEAD
-                $idt = $inft['id_tienda'];
-=======
                 $idt = $inft['id_tienda'];;
->>>>>>> f93818193c39d9e8d4a57595cf7f4ea0fd8b277b
                 $precio = $_POST['precio'];
                 $cantidad = $_POST['cantidad'];
                 $fechaActual = date('Y-m-d');

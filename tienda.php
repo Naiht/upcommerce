@@ -11,14 +11,20 @@
     <title>Tienda</title>
 </head>
 <body>
-    <?php include './nav_bar.php' ?>    
+    <?php include './nav_bar.php' ?> 
     
     <?php 
             include("conexion.php");
 
-            $query = "SELECT * FROM tiendas";
+            $id=$_SESSION['id'];
+            $correo=$_SESSION['email'];
+            $nom=$_SESSION['nombre'];
+
+            $query = "SELECT * FROM tiendas where id_usuario = $id";
             $resultado = $conexion->query($query); 
             $tiendav = $resultado ->fetch_assoc();
+
+            $idt = $tiendav['id_tienda'];
     ?>
 
     
@@ -38,7 +44,7 @@
         <?php
             include("conexion.php");
 
-            $query = "SELECT * FROM productos";
+            $query = "SELECT * FROM productos WHERE id_tienda = $idt";
             $resultado = $conexion->query($query);
             while($row = $resultado ->fetch_assoc()){
             ?>
@@ -49,12 +55,17 @@
                 </div>
                 <p class="precio"><?php echo $row['precio']; ?> C$</p>
                 </div>
-                <script>
-                    pasardato(<?php echo json_encode($row); ?>);
-                </script>
+
+                
+    <script > 
+        var jArray= <?php echo json_encode($row);?>; 
+        alert(jArray[1][1]); 
+    </script>
         <?php
             }
         ?> 
+
+
 
 
         <div class="center"><!--div de los detalles del producto -->
