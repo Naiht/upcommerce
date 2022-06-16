@@ -33,7 +33,7 @@
                   ?>
                         
                         <div class="producto2" precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>">
-                            <form action="tienda_visita.php" method="GET" class="atiendavisita">
+                            <form action="detalle_producto.php" method="GET" class="atiendavisita">
                             <div class="producto">
                                     <img src="data:image/jpg;base64, <?php echo base64_encode($row['foto']); ?>" class="imagen">
                                     <div class="item-content">
@@ -53,8 +53,7 @@
                             <input type="hidden" name="preproducto" value="<?php echo $row['precio']; ?>">
                             <input type="hidden" name="fechapubli" value="<?php echo $row['fecha_publi']; ?>">
                             <input type="hidden" name="cantproducto" value="<?php echo $row['cantidad']; ?>">
-                            <input type="hidden" name="idproducto"
-                            value="<?php echo $row['id_producto']; ?>">
+                            <input type="hidden" name="idproducto" value="<?php echo $row['id_producto']; ?>">
                         </div>
 
                      </form>

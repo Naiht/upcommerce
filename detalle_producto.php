@@ -28,6 +28,7 @@
         $resultado = $conexion->query($query);
 
         $prod = $resultado ->fetch_assoc();
+        $idtienda = $_GET['idtienda'];
     }
 ?>
 <!DOCTYPE html>
@@ -77,7 +78,7 @@
 
     <form action="tienda_visita.php" method="GET" >
         <input id="btn-producto2" name="vista" type="submit" value="detalles" style="display:none">
-        <input type="hidden" name="idtienda" value="<?php echo $prod['id_tienda']?>">
+        <input type="hidden" name="idtienda" value=" <?php echo $idtienda?> " >
     </form>
 
 

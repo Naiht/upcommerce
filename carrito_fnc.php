@@ -18,6 +18,7 @@
                 $carrito = $conexion->query($query);
             }
             echo "<script>alert('Producto agregado al carrito')</script>";
+            header ("Location: index.php");
         }
     }else{
         echo "<script>alert('debes iniciar sesion')</script>";
