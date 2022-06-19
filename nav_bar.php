@@ -34,7 +34,15 @@
        <nav>
            <ul class="nav_opciones">
             <li id="nav_noti"><i class="fa fa-bell"></i></li>
-            <li id="nav_carrito" onclick="btnCarrito()"><i class="fa fa-cart-shopping"></i></li>
+            <?php
+                if(isset($_SESSION["nombre"])){
+
+                    echo '<li id="nav_carrito" onclick="btnCarrito()"><i class="fa fa-cart-shopping"></i></li>';
+                }else{
+                    echo'<li id="nav_carrito" onclick="btnIniciarSesion()"><i class="fa fa-cart-shopping"></i></li>';
+                }
+            ?>
+            
 
             <?php 
                 if(isset($_SESSION["nombre"])){
