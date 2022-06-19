@@ -10,9 +10,7 @@
         $color = $_POST['colorbanm'];
                
         $foto = addslashes(file_get_contents($_FILES['imgtm']['tmp_name']));
-     
-        //$query = "update tiendas set nombre_t = '$nombre',creacion_fecha = '$fechaActual', color_ban = '$color' , foto = '$foto' where id_tienda = $idtm";
-        
+          
         $query = "insert into tiendas (id_usuario, nombre_t, color_ban, creacion_fecha, foto) values ($idus,'$nombre','$color','$fechaActual','$foto')";
         
         $resul = $conexion->query($query);

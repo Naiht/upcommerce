@@ -38,15 +38,33 @@
 
             <?php 
                 if(isset($_SESSION["nombre"])){
+                    include("conexion.php");
 
-                    echo '<li id="nav_user" onclick=""><i class="fa fa-user"></i></li>';
-                    echo '  <div id="opcion" class="invopciones">
-                                <ul>
-                                    <a href="tienda.php"><li><i class="fa fa-shop"></i>Mi tienda</li></a> 
-                                    <a href="dashboard.php"><li><i class="fa fa-dashboard"></i>Panel de control</li></a>
-                                    <a href="login/salir.php"><li><i class="fa fa-close"></i>Cerrar sesion</li></a>
-                                </ul>
-                            </div>';
+                    $id=$_SESSION['id'];
+                    $query = "SELECT id_tienda FROM tiendas where id_usuario = $id";
+                    $resultado = $conexion->query($query); 
+
+
+                    if($resultado ->fetch_assoc() > 0){
+                        echo '<li id="nav_user" onclick=""><i class="fa fa-user"></i></li>';
+                        echo '  <div id="opcion" class="invopciones">
+                                    <ul>
+                                        <a href="tienda.php"><li><i class="fa fa-shop"></i>Mi tienda</li></a> 
+                                        <a href="dashboard.php"><li><i class="fa fa-dashboard"></i>Panel de control</li></a>
+                                        <a href="login/salir.php"><li><i class="fa fa-close"></i>Cerrar sesion</li></a>
+                                    </ul>
+                                </div>';
+                    }else{
+                        echo '<li id="nav_user" onclick=""><i class="fa fa-user"></i></li>';
+                        echo '  <div id="opcion" class="invopciones">
+                                    <ul>
+                                        <a href="creatienda.php"><li><i class="fa fa-shop"></i>Mi tienda</li></a> 
+                                        <a href="login/salir.php"><li><i class="fa fa-close"></i>Cerrar sesion</li></a>
+                                    </ul>
+                                </div>';
+                    }
+
+
                 }else{
                     echo '<li id="nav_user" onclick="btnIniciarSesion()"><i class="fa fa-user"></i></li>';
                 }
