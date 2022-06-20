@@ -66,18 +66,24 @@ body, input{
     margin: auto;
     background-color: red;
     border-radius: 100%;
+    border-color: red;
     color: #fff;
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     font-size: 20px;
     text-align: center;
+}
+.totalypagar{
+    margin-top: 10px;
+    display: flex;
 }
 .preciototal{
     font-size: 40px;
 }
 /*boton pagar*/
 .pagar {
+    margin-left: 70%;
     padding: 15px 25px;
     border: unset;
     border-radius: 15px;
