@@ -38,3 +38,12 @@
       margin: auto;
       text-align: center;
   }
+
+
+.resultados{
+    font-weight: 600;
+    font-size: 2rem;
+    padding-left: 3rem;
+    padding-top: 1rem;
+    margin-bottom: -2rem;
+}

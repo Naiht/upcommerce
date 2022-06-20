@@ -22,6 +22,8 @@
         ?>
 
 
+
+        <p class="resultados">Resultados de la busqueda</p>
         <!--Lista de productos del panel-->
         <div class = "productoslst">
             <?php
