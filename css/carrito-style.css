@@ -65,9 +65,13 @@ body, input{
 .borrar-producto{
     margin: auto;
     background-color: red;
-    border-radius: 50%;
+    border-radius: 100%;
     color: #fff;
-    cursor: pointer;padding: 0px 8px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
 }
 .preciototal{
     font-size: 40px;

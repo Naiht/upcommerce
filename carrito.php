@@ -25,21 +25,27 @@
                     $test = $usuario;
                     $total=0;
                     include("conexion.php");
-                    $query = "select p.nombrep, p.precio, p.foto, c.cantidad from productos p inner join carrito c on p.id_producto = c.producto where cliente=$test";
+                    $query = "select p.id_producto, p.nombrep, p.precio, p.foto, c.cantidad from productos p inner join carrito c on p.id_producto = c.producto where cliente=$test";
                     $resultcarrito = $conexion->query($query);
+                    
                     while($lista = $resultcarrito -> fetch_assoc()){
+                       
                 ?>
-                    <div class = "item">
-                        <img src="data:image/jpg;base64, <?php echo base64_encode($lista['foto']); ?>" class="imagen">
-                        <div class="item-content">
-                            <p class="nom-prod"><?php echo $lista['nombrep']; ?></p>
-                            <?php $subtotal = $lista['cantidad']*$lista['precio']; ?>
-                            <p class="precio-prod"> Subtotal <?php echo $subtotal ?> C$</p>
-                            <p class="cantidad"> cantidad: <?php echo $lista['cantidad']; ?> </p>
-                            <?php $total = $total+$subtotal ?>
+                    <form action="pagar.php" method="GET" class="quitar">
+                        <div class = "item">
+                            <img src="data:image/jpg;base64, <?php echo base64_encode($lista['foto']); ?>" class="imagen">
+                            <div class="item-content">
+                                <p class="nom-prod"><?php echo $lista['nombrep']; ?></p>
+                                <?php $subtotal = $lista['cantidad']*$lista['precio']; ?>
+                                <p class="precio-prod"> Subtotal <?php echo $subtotal ?> C$</p>
+                                <p class="cantidad"> cantidad: <?php echo $lista['cantidad']; ?> </p>
+                                <?php $total = $total+$subtotal ?>
+                            </div>
+                            <input class="borrar-producto" type="submit" name="quitarcarrito" value="X">
+                            <input type="hidden" name="prodelim" value="<?php echo $lista['id_producto']?>" >
+                            
                         </div>
-                        <span class="borrar-producto" data-id="">X</span><!--data id se llena decuertdo al id del item no se q onda ahi supongo que mas adelante del video esta-->
-                        </div>
+                    </form>
                 <?php
                     }
                 ?>
