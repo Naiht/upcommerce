@@ -21,6 +21,7 @@
                         values('$username','$correo','$password')";
                         $result = $conexion->query($query);
                         if($result){
+
                             $query = "SELECT * FROM usuarios WHERE email = '$correo' AND contra ='$password'";
                     
                             $result = $conexion->query($query);
@@ -30,7 +31,7 @@
                                 $_SESSION['id']=$row['id_usuario'];
                                 $_SESSION['email']=$row['email'];
                                 $_SESSION['nombre']=$row['nombres'];
-                                header("Location: ../creatienda.php");
+                                header("Location: ../index.php");
                             }else{
                                 echo "<script>alert('La contraseña o el correo son incorrectos')</script>";
                             }

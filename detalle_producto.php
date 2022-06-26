@@ -48,12 +48,12 @@
 <body>
 
         
-    <form action="carrito_fnc.php" method="GET" class="productoalcarrito">
+    <form id = "form" action="carrito_fnc.php" method="GET" class="productoalcarrito">
         <div class="dos">         
             <div class="imagen_producto">
                 <img class="img_prod" src="data:image/jpg;base64, <?php echo base64_encode($prod['foto']); ?>">
                 <div class="btn-regresar">
-                    <button class="regresar" onclick="regreso2();">Regresar</button>
+                    <input type="button" class="regresar"  value = "Regresar">
 
                     <p id="vsttienda" class="tienda">Visitar Tienda</p>
                 </div>
@@ -91,6 +91,13 @@
         <input type="hidden" name="idtienda" value=" <?php echo $idtienda?> " >
     </form>
 
+    <script>
+        $(".regresar").click(function(){
+            window.history.back();
+            document.getElementById("form").action = "#";
+        });
+    </script>
+
 
     <script>
         $(document).ready(function() {
@@ -103,10 +110,5 @@
         });
     </script>
 
-    <script>
-        function regreso2(){
-            window.history.back();
-        }
-    </script>
 </body>
 </html>

@@ -33,13 +33,12 @@
 
        <nav>
            <ul class="nav_opciones">
-            <li id="nav_noti"><i class="fa fa-bell"></i></li>
+            
             <?php
                 if(isset($_SESSION["nombre"])){
-
+                    echo '<li id="nav_noti"><i class="fa fa-bell"></i></li>';
                     echo '<li id="nav_carrito" onclick="btnCarrito()"><i class="fa fa-cart-shopping"></i></li>';
                 }else{
-                    echo'<li id="nav_carrito" onclick="btnIniciarSesion()"><i class="fa fa-cart-shopping"></i></li>';
                 }
             ?>
             
@@ -72,9 +71,8 @@
                                 </div>';
                     }
 
-
                 }else{
-                    echo '<li id="nav_user" onclick="btnIniciarSesion()"><i class="fa fa-user"></i></li>';
+                    echo '<li id="nav_user" onclick="btnIniciarSesion()"><i class="fa-solid fa-right-to-bracket"></i></li>';
                 }
             ?>    
            </ul>

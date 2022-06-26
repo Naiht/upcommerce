@@ -71,7 +71,7 @@
         $(".btn").click(function(){
 
             if(document.getElementById("option-1").checked){
-              document.getElementById("form").action = "../index.php";
+              document.getElementById("form").action = "pruebaregistrosintienda.php";
             }
 
             if(document.getElementById("option-2").checked){
