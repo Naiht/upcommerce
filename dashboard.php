@@ -76,6 +76,7 @@
 
             <!--Lista de productos del panel-->
             <div class = "productoslst">
+                <div></div>
                 <div class = "Header-txt">
                     <p>Productos en tienda</p>   
                 </div>
