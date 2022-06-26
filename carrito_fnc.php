@@ -23,5 +23,4 @@
     }else{
         echo "<script>alert('debes iniciar sesion')</script>";
     }
-    echo"<script>function atras(){windows.history.back();}atras();</script>";
 ?>

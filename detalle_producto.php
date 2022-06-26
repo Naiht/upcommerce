@@ -66,8 +66,15 @@
                 </div>
                 <p class="precio_prod"><?php echo $precio ?> C$</p>
                 <div class="botones">
-                    <button class="negociar" >Negociar</button>
-                    <button name="alcarrito" class="agregar" type="submit">Agregar</button>
+                    
+                    <?php
+                        if($cantidad>0){
+                    ?>
+                        <button class="negociar" >Negociar</button>
+                        <button name="alcarrito" class="agregar" type="submit">Agregar</button>
+                    <?php
+                        }
+                    ?>
                 </div>
                 <div class="otros">
                     <p class="inventario">Existencias <?php echo $cantidad ?></p>

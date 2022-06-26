@@ -22,11 +22,13 @@
                 $query = "delete from carrito where producto='$prueba'";
                 $finventa=$conexion->query($query);
             }else{
-                echo "<script> alert('no se puede vender ')</script>";
+                echo "<script> alert('Algunos productos no fueron comprados por falta de stock')
+                window.location.href='carrito.php';
+                </script>";
             }
             
         }
-        header ("Location: index.php");
+        //header ("Location: index.php");
     }
 
     if(isset($_GET['quitarcarrito'])){

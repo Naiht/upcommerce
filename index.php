@@ -30,6 +30,7 @@
                 $query = "SELECT * FROM productos";
                 $resultado = $conexion->query($query);
                 while($row = $resultado ->fetch_assoc()){
+                    
                 ?>
                     <form action="detalle_producto.php" method="GET" class="detalles-producto" type="submit">
                         <div  precio="<?php echo $row['precio']; ?>" nombre="<?php echo $row['nombrep']; ?>" class="producto">
