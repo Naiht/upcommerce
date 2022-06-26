@@ -1,6 +1,7 @@
 <?php
     include("conexion.php");
     include './nav_bar.php';
+
     if(isset($_GET['verproducto'])){
         $nombre=$_GET['nomproducto'];
         $descripcion=$_GET['desproducto'];
@@ -9,10 +10,13 @@
         $cantidad=$_GET['cantproducto'];
         $id=$_GET['idproducto'];
         $idprodcarrito=$id;
+
         $query = "SELECT foto, id_tienda FROM productos WHERE id_producto = $id";
         $resultado = $conexion->query($query);
 
         $prod = $resultado ->fetch_assoc();
+    
+        $idtienda = $prod['id_tienda'];
     }
 
 
@@ -24,11 +28,12 @@
         $cantidad=$_GET['cantproducto'];
         $id=$_GET['idproducto'];
         $idprodcarrito=$id;
-        $query = "SELECT foto FROM productos WHERE id_producto = $id";
+
+        $query = "SELECT foto,id_tienda FROM productos WHERE id_producto = $id";
         $resultado = $conexion->query($query);
 
         $prod = $resultado ->fetch_assoc();
-        $idtienda = $_GET['idtienda'];
+        $idtienda = $prod['id_tienda'];
     }
 ?>
 <!DOCTYPE html>
@@ -48,14 +53,12 @@
             <div class="imagen_producto">
                 <img class="img_prod" src="data:image/jpg;base64, <?php echo base64_encode($prod['foto']); ?>">
                 <div class="btn-regresar">
-                    <button class="regresar" onclick="regreso();">Regresar</button>
+                    <button class="regresar" onclick="regreso2();">Regresar</button>
 
-                    <input type="hidden" name="tienda" class="regresar" onclick="regreso();"></button>
                     <p id="vsttienda" class="tienda">Visitar Tienda</p>
- 
-
                 </div>
             </div>
+
             <div class="detalles_producto" >
                 <p class="nom_prod"><?php echo $nombre ?></p>
                 <div class="divdetalle">
@@ -94,8 +97,8 @@
     </script>
 
     <script>
-        function regreso(){
-            location.href = "tienda.php";
+        function regreso2(){
+            window.history.back();
         }
     </script>
 </body>
