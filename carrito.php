@@ -51,8 +51,14 @@
                 ?>
             </div>
             <div class="totalypagar">
-                <p class="preciototal">Total: <?php echo $total ?> C$</p>
-                <button name="realizarpago" type="submit" class="pagar">pagar</button>
+                <div class="divprecio">
+                    <p class="preciototal">Total: <?php echo $total ?> C$</p>
+                </div>
+                
+                <div class="divpagar">
+                    <button name="realizarpago" type="submit" class="pagar">pagar</button>
+                </div>
+                
             </div>
         </div>
     </form>

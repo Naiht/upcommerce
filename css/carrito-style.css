@@ -58,7 +58,7 @@ body, input{
 }
 .item-content{
     /*background-color: #9230de;*/
-    width: 900px;
+    width: 500px;
     margin: auto;
     text-align: center;
 }
@@ -78,12 +78,17 @@ body, input{
     margin-top: 10px;
     display: flex;
 }
+.divprecio{
+    width: 1000px;
+}
+.divpagar{
+    margin-left: 50.7%;
+}
 .preciototal{
-    font-size: 40px;
+    font-size: 30px;
 }
 /*boton pagar*/
 .pagar {
-    margin-left: 70%;
     padding: 15px 25px;
     border: unset;
     border-radius: 15px;
