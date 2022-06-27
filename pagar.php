@@ -21,14 +21,22 @@
                 $resultreduccion = $conexion->query($query);
                 $query = "delete from carrito where producto='$prueba'";
                 $finventa=$conexion->query($query);
-            }else{
-                echo "<script> alert('Algunos productos no fueron comprados por falta de stock')
-                window.location.href='carrito.php';
-                </script>";
             }
             
         }
-        //header ("Location: index.php");
+
+        $query = "select * from carrito where cliente=$otra";
+        $validacion = $conexion->query($query);
+        if($validacion->num_rows>0){
+            echo "<script> alert('Compra realizada (Algunos productos no fueron comprados por falta de stock)')
+            window.history.back()
+            </script>";
+        }else{
+            echo "<script> alert('Compra con exito')
+            window.history.back()
+            </script>";
+        }
+        
     }
 
     if(isset($_GET['quitarcarrito'])){

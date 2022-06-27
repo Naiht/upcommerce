@@ -41,16 +41,22 @@
                             echo "<script>alert('$username $correo')</script>";      
 
                         }else{
-                            echo "<script>alert('hay un error')</script>";
-                            header("Location: login.php");
+                            echo "<script>alert('hay un error')
+                            window.history.back()
+                            </script>";
+                            //header("Location: login.php");
                         }
                         }else{
-                            echo "<script>alert('El correo ya existe')</script>";
-                            header("Location: login.php");
+                            echo "<script>alert('El correo ya existe')
+                            window.history.back()
+                            </script>";
+                            //header("Location: login.php");
                         }
                 }else{
-                    echo "<script>alert('Las contraseñas no coinciden')</script>";
-                    header("Location: login.php");
+                    echo "<script>alert('Las contraseñas no coinciden')
+                    window.history.back()
+                    </script>";
+                    //header("Location: login.php");
                 }
             }
           ?>

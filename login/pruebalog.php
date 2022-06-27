@@ -24,8 +24,10 @@
                 $_SESSION['nombre']=$row['nombres'];
                 header("Location: ../index.php");
               }else{
-                echo "<script>alert('La contraseña o el correo son incorrectos')</script>";
-                header("Location: login.php");
+                echo "<script>alert('La contraseña o el correo son incorrectos')
+                window.history.back()
+                </script>";
+                
               }
             }
 ?>
